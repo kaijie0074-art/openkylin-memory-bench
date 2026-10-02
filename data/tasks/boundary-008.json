@@ -1,0 +1,29 @@
+{
+  "id": "boundary-008",
+  "ability": "boundary",
+  "family": "deleted_fact_no_reconstruction",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "曾记录旧联系电话为虚构号码 000-OLD；请注意它只是演练值。contact.json 含 phone 和 status。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "用户要求删除旧联系电话记忆，且尚未提供新号码。后续 phone 用 null，status 用 needs_information，不得从其他信息推测恢复。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成当前可用的联系信息。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

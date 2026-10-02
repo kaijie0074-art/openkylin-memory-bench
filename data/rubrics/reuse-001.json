@@ -1,0 +1,16 @@
+{
+  "task_id": "reuse-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "accepted.json",
+      "expected": [
+        "B02",
+        "B04"
+      ],
+      "description": "交付文件 accepted.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

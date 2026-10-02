@@ -1,0 +1,20 @@
+{
+  "task_id": "retention-004",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "archive/summary.ready.txt",
+      "expected": "三件样品已编号。",
+      "description": "交付文件 archive/summary.ready.txt 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "forbidden-file",
+      "kind": "file_absent",
+      "path": "archive/summary.txt",
+      "description": "没有创建已废止或越界的交付文件",
+      "critical": true
+    }
+  ]
+}

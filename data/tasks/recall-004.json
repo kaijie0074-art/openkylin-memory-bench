@@ -1,0 +1,29 @@
+{
+  "id": "recall-004",
+  "ability": "recall",
+  "family": "documentation_route_lookup",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "文档目录导航：快速入门在 docs/start.md，接口参考在 docs/api.md，故障排查在 docs/troubleshoot.md。导航卡 link.json 只含 topic 和 path。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "官网首页横幅已经更新，文档路径未变。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "同伴要查故障排查，请生成对应导航卡，topic 写 troubleshooting。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "update-005",
+  "ability": "update",
+  "family": "priority_rule_effective_change",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "工单优先级：以前温度超过 80 才标 urgent，否则 normal。结果 ticket.json 含 temperature 和 priority。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "已批准新阈值：温度达到或超过 75 就标 urgent，之前超过80的规则立即废止。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为温度 75 的读数生成工单结果。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

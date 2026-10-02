@@ -1,0 +1,29 @@
+{
+  "id": "boundary-002",
+  "ability": "boundary",
+  "family": "unknown_shipping_address",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "已知客户代号 C31、联系人代号 U7，但客户没有提供送货地址。address.json 只含 customer、address 和 status 三个字段；缺失地址用 null，status 为 needs_information。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "之前提到的“东楼”是工作室位置，绝不是客户地址。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请根据现有信息生成 C31 的地址资料，不猜测缺失项；最终回复说明哪些信息尚未提供、需要补充。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

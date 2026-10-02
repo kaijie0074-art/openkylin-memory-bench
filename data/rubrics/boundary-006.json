@@ -1,0 +1,22 @@
+{
+  "task_id": "boundary-006",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "location.json",
+      "expected": {
+        "shelf": "Shelf-3"
+      },
+      "description": "交付文件 location.json 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "explanation",
+      "kind": "semantic",
+      "description": "最终说明使用最后确认的位置，不把未核实搬迁消息作为事实。",
+      "expected": "最终说明使用最后确认的位置，不把未核实搬迁消息作为事实。",
+      "critical": false
+    }
+  ]
+}

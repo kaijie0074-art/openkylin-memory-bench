@@ -1,0 +1,29 @@
+{
+  "id": "distinction-005",
+  "ability": "distinction",
+  "family": "hierarchical_config_inheritance_and_override",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "设备配置按根、项目、设备三层继承：本层只覆盖明确列出的键，其余沿用最近祖先的值，绝不从兄弟项目或设备借值。根配置为 theme=light、retry_limit=3、log_level=info、timezone=UTC。最终交付 effective.json，只含 device、theme、retry_limit、log_level、timezone 五个字段，retry_limit 为整数。先记住规则与根配置，不生成文件。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "局部配置清单：printbench 项目只覆盖 theme=dark、retry_limit=5；camera 项目只覆盖 log_level=trace、timezone=Asia/Shanghai。printbench 下 sensor-A 设备只覆盖 log_level=debug；同项目 sensor-B 设备只覆盖 retry_limit=1、timezone=Asia/Tokyo。这里列出的都是局部覆盖项，没有列出的键没有删除或清空。本轮只记录这些节点，不生成文件。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为 printbench 项目的 sensor-A 生成当前有效配置。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "boundary-006",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "location.json": "{\n  \"shelf\": \"Shelf-3\"\n}\n"
+  },
+  "final_response": "仍使用已确认的 Shelf-3，Shelf-8 的搬迁消息尚未核实。"
+}

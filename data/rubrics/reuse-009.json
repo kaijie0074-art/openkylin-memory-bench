@@ -1,0 +1,16 @@
+{
+  "task_id": "reuse-009",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "public.json",
+      "expected": {
+        "name_code": "P4",
+        "department": "test"
+      },
+      "description": "交付文件 public.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

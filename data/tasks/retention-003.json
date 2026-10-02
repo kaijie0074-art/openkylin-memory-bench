@@ -1,0 +1,29 @@
+{
+  "id": "retention-003",
+  "ability": "retention",
+  "family": "measurement_decimal_convention",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "实验测量交付 measurement.txt：温度始终保留两位小数并紧跟单位 °C，无额外文字。本轮只确认规则。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "实验室墙上时钟需要换电池；测量格式保持原约定。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请交付今天的温度测量值 23.5。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

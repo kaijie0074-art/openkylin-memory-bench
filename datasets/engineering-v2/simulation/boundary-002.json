@@ -1,0 +1,9 @@
+{
+  "task_id": "boundary-002",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "address.json": "{\n  \"customer\": \"C31\",\n  \"address\": null,\n  \"status\": \"needs_information\"\n}\n"
+  },
+  "final_response": "客户地址尚未提供，已标为待补充。"
+}

@@ -1,0 +1,15 @@
+{
+  "task_id": "update-008",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "packing.json",
+      "expected": {
+        "units_per_box": 8
+      },
+      "description": "交付文件 packing.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

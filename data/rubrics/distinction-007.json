@@ -1,0 +1,17 @@
+{
+  "task_id": "distinction-007",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "version.json",
+      "expected": {
+        "repository": "mirror",
+        "branch": "stable",
+        "version": "1.2"
+      },
+      "description": "交付文件 version.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

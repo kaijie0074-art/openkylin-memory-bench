@@ -1,0 +1,29 @@
+{
+  "id": "distinction-008",
+  "ability": "distinction",
+  "family": "role_scoped_approval_limit",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "审批上限按角色区分：项目负责人最多 5000 元，采购负责人最多 2000 元。同一个人可以有不同角色；limit.json 含 role、max_amount。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "本次规则没有按人名合并权限的授权。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "以采购负责人角色生成审批上限文件。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

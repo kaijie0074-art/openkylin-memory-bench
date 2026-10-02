@@ -1,0 +1,29 @@
+{
+  "id": "retention-004",
+  "ability": "retention",
+  "family": "archive_filename_suffix",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "资料存档规范：每次摘要保存为 archive/summary.ready.txt；内容原样保存。扩展名中 ready 表示待归档，不能省略。暂不生成文件。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "扫描仪换到了右侧桌面，仍按原存档规范交付。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请存档这段摘要：三件样品已编号。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

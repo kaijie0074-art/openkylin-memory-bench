@@ -1,0 +1,29 @@
+{
+  "id": "reuse-002",
+  "ability": "reuse",
+  "family": "unit_conversion_centimeters",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "尺寸转换流程：输入以 mm 给定，把数值除以10得到 cm。输出 converted.json，字段 value、unit，unit 为 cm。不额外四舍五入。先记流程。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "这套流程只改变长度单位，不处理重量。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按之前流程转换 235 mm。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

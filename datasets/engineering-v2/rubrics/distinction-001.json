@@ -1,0 +1,16 @@
+{
+  "task_id": "distinction-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "weekly.json",
+      "expected": {
+        "project": "Aurora-Lite",
+        "signature": "Team-L"
+      },
+      "description": "交付文件 weekly.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

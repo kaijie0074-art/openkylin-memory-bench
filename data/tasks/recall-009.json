@@ -1,0 +1,29 @@
+{
+  "id": "recall-009",
+  "ability": "recall",
+  "family": "parcel_carrier_decision",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "运输规则：易碎仪器走稳达专线，普通文件走文速快递，低温样本走冷链七号。发运单 shipment.json 含 category 和 carrier。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "包装材料由同伴提前准备，此处没有新增运输类别。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按已知规则生成低温样本的发运单。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

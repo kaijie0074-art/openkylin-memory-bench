@@ -1,0 +1,16 @@
+{
+  "task_id": "reuse-007",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "budget.json",
+      "expected": {
+        "spent": 120,
+        "remaining": -20
+      },
+      "description": "交付文件 budget.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

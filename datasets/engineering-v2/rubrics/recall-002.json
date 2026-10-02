@@ -1,0 +1,16 @@
+{
+  "task_id": "recall-002",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "maintenance.json",
+      "expected": {
+        "device": "temperature_probe",
+        "interval_days": 14
+      },
+      "description": "交付文件 maintenance.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

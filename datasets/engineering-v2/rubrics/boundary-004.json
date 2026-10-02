@@ -1,0 +1,15 @@
+{
+  "task_id": "boundary-004",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "pricing.json",
+      "expected": {
+        "multiplier": 1.0
+      },
+      "description": "交付文件 pricing.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

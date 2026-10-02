@@ -1,0 +1,16 @@
+{
+  "task_id": "update-002",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "config.json",
+      "expected": {
+        "timeout_seconds": 45,
+        "retries": 2
+      },
+      "description": "交付文件 config.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

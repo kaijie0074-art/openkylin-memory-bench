@@ -1,0 +1,18 @@
+{
+  "task_id": "retention-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "csv_equals",
+      "path": "journal.csv",
+      "expected": [
+        ["sequence", "event"],
+        ["1", "基线测量完成"],
+        ["2", "双人复测完成"],
+        ["3", "封存样品"]
+      ],
+      "description": "最终日志保留早期两个事件及顺序，正确追加当前事件，排除临时标签和另一项目的采购讨论",
+      "critical": true
+    }
+  ]
+}

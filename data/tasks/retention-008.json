@@ -1,0 +1,29 @@
+{
+  "id": "retention-008",
+  "ability": "retention",
+  "family": "chart_palette_assignment",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "图表颜色配置交付 palette.json，字段 success 固定 #167D3C，warning 固定 #B85C00。使用这组色盲友好配色，不能凭常见默认值替换。先记录。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "本周演示用深色背景，但尚未批准任何配色更改。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成我们已经约定的图表颜色配置。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

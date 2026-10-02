@@ -1,0 +1,13 @@
+{
+  "task_id": "retention-009",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "label.txt",
+      "expected": "B7|2026-09-30|014",
+      "description": "交付文件 label.txt 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "boundary-010",
+  "ability": "boundary",
+  "family": "bounded_schedule_without_confirmed_exact_date",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "请保存设备联合复测的排期约定：最终写 schedule.json，且只含 title、earliest_date、latest_date、confirmed_date、status。title 用任务原名。日期一律用 YYYY-MM-DD 字符串，所有范围含首尾两天；earliest_date 和 latest_date 要根据全部已知约束求交集，表示可行范围。可行范围不等于已确认排期；未得到明确选定某一天的确认时，confirmed_date 必须为 null、status 必须为 awaiting_confirmation，不自行选一天，也不要因为准确日期未知就抹去已知范围。当前没有任何一天得到确认。先保存约定，稍后补充范围。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "设备联合复测的人员可用范围是 2026-10-12 至 2026-10-16，场地可用范围是 2026-10-14 至 2026-10-18。两项必须同时满足，先记住，不输出最终排期。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "再补充设备联合复测的约束：器材物流最早允许 2026-10-15 开始工作，项目要求最晚在 2026-10-16 进行。没有另外确认准确日期。请把这些约束一起保存，先不生成最终排期。",
+      "final": false
+    },
+    {
+      "id": "s4",
+      "prompt": "请交付设备联合复测的当前可行日期范围及准确日期确认状态。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,575 @@
+{
+  "schema_version": "1",
+  "review_date": "2026-09-28",
+  "scope": "official static method references; direct dependencies locally tested; two real-agent Mac/Debian smoke runs completed; openKylin validation pending",
+  "projects": [
+    {
+      "name": "ContextWeave",
+      "url": "https://github.com/OpenMOSS/ContextWeave",
+      "code_license": "CC-BY-NC-4.0 (root LICENSE; no separate permissive code grant found)",
+      "data_license": "CC-BY-NC-4.0 (root LICENSE; review bundled assets separately)",
+      "adoption": "method_reference",
+      "stages": [
+        "scenario",
+        "session_isolation",
+        "evidence",
+        "scoring"
+      ],
+      "lesson": "参考工作区快照、历史注入与当前召回分离、有无记忆配对、文件与行为证据。",
+      "risk": "非商业限制；本项目不复制其代码或数据。Docker镜像、指定CLI和外部接口未在openKylin复现。",
+      "license_evidence_urls": [
+        "https://github.com/OpenMOSS/ContextWeave/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "LongMemEval",
+      "url": "https://github.com/xiaowu0162/LongMemEval",
+      "code_license": "MIT",
+      "data_license": "MIT declared on cleaned dataset card; separate data LICENSE not found",
+      "adoption": "method_reference",
+      "stages": [
+        "dataset",
+        "session_history",
+        "scoring"
+      ],
+      "lesson": "知识更新、拒答与时间戳对话；题型分别评分。",
+      "risk": "主要问答；旧答案与新答案同时出现也可能判对，不能直接判行动。使用cleaned版本并剥离答案字段。",
+      "license_evidence_urls": [
+        "https://github.com/xiaowu0162/LongMemEval/blob/main/LICENSE",
+        "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "LoCoMo",
+      "url": "https://github.com/snap-research/locomo",
+      "code_license": "CC-BY-NC-4.0",
+      "data_license": "CC-BY-NC-4.0 (root LICENSE)",
+      "adoption": "method_reference",
+      "stages": [
+        "dataset",
+        "evidence",
+        "scoring"
+      ],
+      "lesson": "会话、说话人、时间、证据ID；多跳与时序问题的设计。",
+      "risk": "不复制受限数据；QA标签与历史同对象必须拆开；图片仅URL，部分任务实现未发布。",
+      "license_evidence_urls": [
+        "https://github.com/snap-research/locomo/blob/main/LICENSE.txt"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "MemoryAgentBench",
+      "url": "https://github.com/HUST-AI-HYZ/MemoryAgentBench",
+      "code_license": "MIT (root; third-party subdirectories need individual review)",
+      "data_license": "MIT declared on dataset card; upstream adapted subsets need provenance review",
+      "adoption": "method_reference",
+      "stages": [
+        "dataset",
+        "memory_ingestion",
+        "session_isolation"
+      ],
+      "lesson": "增量注入、一次构建多题测试、冲突更新与测试时学习。",
+      "risk": "后端依赖冲突；问答/摘要并不等于真实工具任务；重复运行必须单独隔离状态。",
+      "license_evidence_urls": [
+        "https://github.com/HUST-AI-HYZ/MemoryAgentBench/blob/main/LICENSE",
+        "https://huggingface.co/datasets/ai-hyz/MemoryAgentBench"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "LongMemEval-V2",
+      "url": "https://github.com/xiaowu0162/LongMemEval-V2",
+      "code_license": "Apache-2.0",
+      "data_license": "Apache-2.0",
+      "adoption": "method_reference",
+      "stages": [
+        "input_boundary",
+        "memory_interface",
+        "scoring",
+        "budget"
+      ],
+      "lesson": "memory query不接收gold、题型和题号；统一证据上下文预算，轨迹输入与评分分离。",
+      "risk": "输入为行动轨迹，但最终主要问答；默认数据与模型服务较重，未整套复现。",
+      "license_evidence_urls": [
+        "https://github.com/xiaowu0162/LongMemEval-V2/blob/main/LICENSE",
+        "https://huggingface.co/datasets/xiaowu0162/longmemeval-v2/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "MemoryArena",
+      "url": "https://github.com/ZexueHe/MemoryArena",
+      "code_license": "unknown: root LICENSE not found",
+      "data_license": "CC-BY-4.0 per official dataset documentation",
+      "adoption": "method_reference",
+      "stages": [
+        "environment",
+        "agent_loop",
+        "memory_interface"
+      ],
+      "lesson": "跨会话行动、环境反馈、存记忆、后续行动的闭环；环境/智能体/记忆拆分。",
+      "risk": "代码仍preview且根许可未明确，不复制；多环境很重，重跑namespace需加入run ID。",
+      "license_evidence_urls": [
+        "https://github.com/ZexueHe/MemoryArena",
+        "https://memoryarena.github.io/"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "LoCoMo-Plus",
+      "url": "https://github.com/xjtuleeyf/Locomo-Plus",
+      "code_license": "unknown: README refers to license but root LICENSE not found",
+      "data_license": "unknown for additions; upstream LoCoMo carries CC-BY-NC-4.0",
+      "adoption": "method_reference",
+      "stages": [
+        "dataset_generation",
+        "human_review",
+        "semantic_scoring"
+      ],
+      "lesson": "早期线索与后期隐式触发、人工筛选、语义距离控制。",
+      "risk": "不得把未明确许可等同可复制；原项目主要测回答约束，需扩展文件行为。",
+      "license_evidence_urls": [
+        "https://github.com/xjtuleeyf/Locomo-Plus",
+        "https://github.com/snap-research/locomo/blob/main/LICENSE.txt"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "Inspect AI",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_ai",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "direct_dependency",
+      "stages": [
+        "runner",
+        "scoring",
+        "trace"
+      ],
+      "lesson": "评估任务、求解器、评分器分层；统一日志和重跑。",
+      "risk": "依赖安装不代表本项目已完成真实智能体或openKylin集成。",
+      "license_evidence_urls": [
+        "https://github.com/UKGovernmentBEIS/inspect_ai/blob/main/LICENSE"
+      ],
+      "validation": "installed_and_offline_tested",
+      "version": "0.3.271",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Mac, synthetic fixtures and local integration; not real model or openKylin results"
+    },
+    {
+      "name": "Harbor",
+      "url": "https://github.com/harbor-framework/harbor",
+      "code_license": "Apache-2.0",
+      "data_license": "task-dependent; not inherited from code license",
+      "adoption": "method_reference",
+      "stages": [
+        "environment",
+        "container",
+        "artifact"
+      ],
+      "lesson": "任务环境生命周期、文件制品、可复现环境。",
+      "risk": "不导入未知任务资产；完整执行器体量较大。",
+      "license_evidence_urls": [
+        "https://github.com/harbor-framework/harbor/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "AgentGym",
+      "url": "https://github.com/WooooDyy/AgentGym",
+      "code_license": "MIT",
+      "data_license": "environment-dependent; not globally verified",
+      "adoption": "method_reference",
+      "stages": [
+        "agent_interface",
+        "environment",
+        "trajectory"
+      ],
+      "lesson": "统一环境交互与轨迹结构；复旦智能体研究连接。",
+      "risk": "不同环境许可证与依赖分别核查；未声称复旦合作或上游认可。",
+      "license_evidence_urls": [
+        "https://github.com/WooooDyy/AgentGym/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "OSWorld",
+      "url": "https://github.com/xlang-ai/OSWorld",
+      "code_license": "Apache-2.0",
+      "data_license": "task and VM assets require individual review",
+      "adoption": "method_reference",
+      "stages": [
+        "desktop_environment",
+        "reset",
+        "evidence"
+      ],
+      "lesson": "桌面任务复位、执行证据、基于实际状态的验证。",
+      "risk": "首版不搬整套桌面虚拟机与任务；桌面控制成本高。",
+      "license_evidence_urls": [
+        "https://github.com/xlang-ai/OSWorld/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "OpenClaw",
+      "url": "https://github.com/openclaw/openclaw",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "real_adapter_target",
+      "stages": [
+        "agent_adapter",
+        "session",
+        "memory"
+      ],
+      "lesson": "一款独立智能体的会话与原生持久化适配。",
+      "risk": "需要隔离profile及真实版本检测；隐藏记忆不可假称已观测；仅有单题Mac/Debian真实smoke，完整pilot与openKylin结论待验证。",
+      "license_evidence_urls": [
+        "https://github.com/openclaw/openclaw/blob/main/LICENSE"
+      ],
+      "validation": "real_mac_container_smoke_passed_openkylin_pending",
+      "version": "2026.9.6 (eb377ac)",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Real three-session update-001 smoke on Mac host / Debian ARM64 container, not openKylin; broader pilot ongoing.",
+      "validation_evidence": "reports/real-local-proxy-smoke-v2",
+      "validation_limit": "One development task, three native sessions; not a benchmark-wide or openKylin result."
+    },
+    {
+      "name": "Hermes Agent",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "real_adapter_target",
+      "stages": [
+        "agent_adapter",
+        "session",
+        "memory"
+      ],
+      "lesson": "第二款独立智能体；保留原生轨迹与会话恢复语义。",
+      "risk": "CLI和服务版本须固定；用模拟器不能替代真实双智能体。",
+      "license_evidence_urls": [
+        "https://github.com/NousResearch/hermes-agent/blob/main/LICENSE"
+      ],
+      "validation": "real_mac_container_smoke_passed_openkylin_pending",
+      "version": "unknown",
+      "commit": "2ffa4977baf9874c498453a09447dc399b0fd215",
+      "review_date": "2026-09-28",
+      "validation_scope": "Real three-session update-001 smoke on Mac host / Debian ARM64 container, not openKylin; broader pilot ongoing.",
+      "validation_evidence": "reports/real-local-proxy-smoke-v2",
+      "validation_limit": "One development task, three native sessions; not a benchmark-wide or openKylin result."
+    },
+    {
+      "name": "KylinAgent",
+      "url": "https://gitee.com/openkylin/kylin-agent",
+      "code_license": "AGPL-3.0 (official repository declaration)",
+      "data_license": "not_applicable",
+      "adoption": "optional_native_candidate",
+      "stages": [
+        "openkylin",
+        "agent_adapter"
+      ],
+      "lesson": "openKylin原生入口；当前Hermes后端关系要明确。",
+      "risk": "不能把Hermes与其前端算作两个独立记忆引擎；直接复用需处理AGPL义务，首版不复制。",
+      "license_evidence_urls": [
+        "https://gitee.com/openkylin/kylin-agent"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "KylinBot SIG",
+      "url": "https://gitee.com/openkylin/community/tree/master/sig/KylinBot",
+      "code_license": "unknown: core repository access/license not fully verified",
+      "data_license": "unknown",
+      "adoption": "discovery_only",
+      "stages": [
+        "openkylin",
+        "community"
+      ],
+      "lesson": "跟踪原生智能体生态与可接入入口。",
+      "risk": "SIG目录不是已验证运行时；未完整核查核心代码和许可。",
+      "license_evidence_urls": [
+        "https://gitee.com/openkylin/community/tree/master/sig/KylinBot"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "DeepEval",
+      "url": "https://github.com/confident-ai/deepeval",
+      "code_license": "Apache-2.0",
+      "data_license": "not_applicable",
+      "adoption": "method_reference",
+      "stages": [
+        "semantic_scoring",
+        "judge_calibration"
+      ],
+      "lesson": "语义评估、裁判提示与评分可靠性检查。",
+      "risk": "不以裁判自评作为真值；外部服务和许可范围另查。",
+      "license_evidence_urls": [
+        "https://github.com/confident-ai/deepeval/blob/main/LICENSE.md"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "Ragas",
+      "url": "https://github.com/vibrantlabsai/ragas",
+      "code_license": "Apache-2.0",
+      "data_license": "not_applicable",
+      "adoption": "method_reference",
+      "stages": [
+        "retrieval_scoring",
+        "judge_calibration"
+      ],
+      "lesson": "检索证据质量与生成回答质量分开分析。",
+      "risk": "RAG问答指标不能直接代表任务完成度。",
+      "license_evidence_urls": [
+        "https://github.com/vibrantlabsai/ragas/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "Promptfoo",
+      "url": "https://github.com/promptfoo/promptfoo",
+      "code_license": "MIT (core repository)",
+      "data_license": "not_applicable",
+      "adoption": "method_reference",
+      "stages": [
+        "experiment_matrix",
+        "assertions",
+        "comparison"
+      ],
+      "lesson": "配置化对比、断言和固定测试样本。",
+      "risk": "依赖或界面更换不会自动解决评测泄漏；本项目不整合其服务。",
+      "license_evidence_urls": [
+        "https://github.com/promptfoo/promptfoo/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "Langfuse",
+      "url": "https://github.com/langfuse/langfuse",
+      "code_license": "MIT core; ee and other paths have separate terms",
+      "data_license": "not_applicable",
+      "adoption": "method_reference",
+      "stages": [
+        "trace",
+        "observability",
+        "cost"
+      ],
+      "lesson": "轨迹、版本、延迟、成本与评估记录关联。",
+      "risk": "不能把整个仓库都标MIT；首版本地证据，不上传用户内容。",
+      "license_evidence_urls": [
+        "https://github.com/langfuse/langfuse/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "OpenTelemetry Python",
+      "url": "https://github.com/open-telemetry/opentelemetry-python",
+      "code_license": "Apache-2.0",
+      "data_license": "not_applicable",
+      "adoption": "export_extension",
+      "stages": [
+        "trace_export"
+      ],
+      "lesson": "标准化事件与span导出能力预留。",
+      "risk": "仅预留导出，不把端到端遥测视为已实现。",
+      "license_evidence_urls": [
+        "https://github.com/open-telemetry/opentelemetry-python/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "pytest",
+      "url": "https://github.com/pytest-dev/pytest",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "direct_test_dependency",
+      "stages": [
+        "tests"
+      ],
+      "lesson": "数据、隔离、证据和评分回归。",
+      "risk": "测试通过仅证明覆盖的条件，不代表真实智能体性能。",
+      "license_evidence_urls": [
+        "https://github.com/pytest-dev/pytest/blob/main/LICENSE"
+      ],
+      "validation": "installed_and_offline_tested",
+      "version": "9.1.1",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Mac, synthetic fixtures and local integration; not real model or openKylin results"
+    },
+    {
+      "name": "Hypothesis",
+      "url": "https://github.com/HypothesisWorks/hypothesis",
+      "code_license": "MPL-2.0",
+      "data_license": "not_applicable",
+      "adoption": "direct_test_dependency",
+      "stages": [
+        "property_tests"
+      ],
+      "lesson": "属性测试发现路径、证据和输入边界反例。",
+      "risk": "修改其MPL覆盖文件时需保留相应义务；首版仅依赖。",
+      "license_evidence_urls": [
+        "https://github.com/HypothesisWorks/hypothesis/blob/master/LICENSE.txt"
+      ],
+      "validation": "installed_and_offline_tested",
+      "version": "6.168.2",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Mac, synthetic fixtures and local integration; not real model or openKylin results"
+    },
+    {
+      "name": "Pydantic",
+      "url": "https://github.com/pydantic/pydantic",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "direct_dependency",
+      "stages": [
+        "schema",
+        "validation"
+      ],
+      "lesson": "严格任务/证据/评分模型，拒绝未知字段。",
+      "risk": "类型校验不等于可信输入或语义正确。",
+      "license_evidence_urls": [
+        "https://github.com/pydantic/pydantic/blob/main/LICENSE"
+      ],
+      "validation": "installed_and_offline_tested",
+      "version": "2.13.5",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Mac, synthetic fixtures and local integration; not real model or openKylin results"
+    },
+    {
+      "name": "Plotly.py",
+      "url": "https://github.com/plotly/plotly.py",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "direct_dependency",
+      "stages": [
+        "report",
+        "visualization"
+      ],
+      "lesson": "本地交互报告、能力对比和样例下钻。",
+      "risk": "雷达图仅在相同数据和协议下可比。",
+      "license_evidence_urls": [
+        "https://github.com/plotly/plotly.py/blob/master/LICENSE.txt"
+      ],
+      "validation": "installed_and_offline_tested",
+      "version": "6.9.0",
+      "commit": "unknown",
+      "review_date": "2026-09-28",
+      "validation_scope": "Mac, synthetic fixtures and local integration; not real model or openKylin results"
+    },
+    {
+      "name": "Mem0",
+      "url": "https://github.com/mem0ai/mem0",
+      "code_license": "Apache-2.0 (open-source repository)",
+      "data_license": "not_applicable",
+      "adoption": "optional_memory_extension",
+      "stages": [
+        "memory_adapter"
+      ],
+      "lesson": "第三方结构化记忆组件的后续配置对照。",
+      "risk": "不是独立第二智能体；托管产品规则与开源库不同。",
+      "license_evidence_urls": [
+        "https://github.com/mem0ai/mem0/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "LangMem",
+      "url": "https://github.com/langchain-ai/langmem",
+      "code_license": "MIT",
+      "data_license": "not_applicable",
+      "adoption": "optional_memory_extension",
+      "stages": [
+        "memory_adapter"
+      ],
+      "lesson": "记忆抽取、管理与检索组件的后续实验。",
+      "risk": "替换记忆组件属于受测条件，不应同时改变全部框架。",
+      "license_evidence_urls": [
+        "https://github.com/langchain-ai/langmem/blob/main/LICENSE"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    },
+    {
+      "name": "Letta",
+      "url": "https://github.com/letta-ai/letta",
+      "code_license": "historical Apache-2.0; current migration to letta-code requires version/license re-verification",
+      "data_license": "not_applicable",
+      "adoption": "deferred_pending_license",
+      "stages": [
+        "memory_adapter",
+        "agent_adapter"
+      ],
+      "lesson": "持久状态智能体与记忆分层的设计参考。",
+      "risk": "不将历史Apache声明直接套用当前迁移后的版本；未加入首版依赖。",
+      "license_evidence_urls": [
+        "https://github.com/letta-ai/letta"
+      ],
+      "validation": "static_only",
+      "version": "unknown",
+      "commit": "unknown",
+      "review_date": "2026-09-28"
+    }
+  ]
+}

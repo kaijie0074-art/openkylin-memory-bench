@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openkylin-memory-bench"
+version = "0.1.0"
+description = "Evidence-first cross-session agent memory evaluation"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["inspect-ai>=0.3", "pydantic>=2.8,<3", "plotly>=6,<7", "httpx>=0.27,<1"]
+
+[project.scripts]
+kmb = "kmb.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "hypothesis>=6", "ruff>=0.11"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/kmb"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"data" = "kmb/data"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

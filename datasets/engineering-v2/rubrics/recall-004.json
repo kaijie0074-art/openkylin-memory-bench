@@ -1,0 +1,16 @@
+{
+  "task_id": "recall-004",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "link.json",
+      "expected": {
+        "topic": "troubleshooting",
+        "path": "docs/troubleshoot.md"
+      },
+      "description": "交付文件 link.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

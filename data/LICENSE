@@ -1,0 +1,19 @@
+Original benchmark task data, rubrics, and simulation fixture definitions
+Copyright (c) 2026 openKylin Memory Bench contributors
+
+These original data files are licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0).
+
+License deed: https://creativecommons.org/licenses/by/4.0/
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution should identify openKylin Memory Bench, retain this license notice,
+link to the license, and indicate whether changes were made. This notice is a
+summary; the linked legal code governs. No third-party benchmark data is bundled
+under this grant. Third-party references retain their original licenses.
+
+The simulation fixtures are authored expected states for software testing, not
+results produced by real agents or proof of openKylin compatibility. No human
+review or scientific validity is asserted by distribution of these data.
+
+This data license does not change the project's Apache-2.0 source-code license.

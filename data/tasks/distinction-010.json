@@ -1,0 +1,29 @@
+{
+  "id": "distinction-010",
+  "ability": "distinction",
+  "family": "material_color_batch_identity",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "白色PLA批次 W-A 喷头温度 205，白色PLA批次 W-B 喷头温度 215。profile.json 含 batch、nozzle_celsius。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "材料颜色和名称相同，打印参数必须按批次匹配。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成 W-B 批次的打印参数。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

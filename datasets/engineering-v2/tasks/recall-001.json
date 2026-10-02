@@ -1,0 +1,29 @@
+{
+  "id": "recall-001",
+  "ability": "recall",
+  "family": "incident_contact_lookup",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "运维值班信息：存储故障联系林工，网络故障联系周工；交付联系卡 contact.json，只有 incident 和 owner 两个字段。先保存信息。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "显示器采购由许工处理，与故障值班无关。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "现在发生网络故障。请依据已知值班信息生成联系卡，incident 写 network。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

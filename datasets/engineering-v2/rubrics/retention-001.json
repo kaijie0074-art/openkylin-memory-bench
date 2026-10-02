@@ -1,0 +1,20 @@
+{
+  "task_id": "retention-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "deliverables/weekly.txt",
+      "expected": "完成接口联调。",
+      "description": "交付文件 deliverables/weekly.txt 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "forbidden-file",
+      "kind": "file_absent",
+      "path": "weekly.txt",
+      "description": "没有创建已废止或越界的交付文件",
+      "critical": true
+    }
+  ]
+}

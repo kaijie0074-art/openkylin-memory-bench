@@ -1,0 +1,29 @@
+{
+  "id": "retention-002",
+  "ability": "retention",
+  "family": "release_notice_locale",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "团队发布通知的固定约定：生成 notice.json，字段 language 固定 zh-CN，timezone 固定 Asia/Shanghai，message 为当次通知正文。先记住，不生成。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "下周讨论英文文档翻译；那是文档工作，不修改发布通知的语言或时区。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按约定生成通知，正文为“服务维护完成”。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

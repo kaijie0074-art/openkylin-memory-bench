@@ -1,0 +1,29 @@
+{
+  "id": "retention-007",
+  "ability": "retention",
+  "family": "meeting_minutes_separator",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "会议要点存为 minutes.txt：每个要点前加“• ”，要点之间一个换行；不加总标题。此格式长期生效。先不写。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "投影幕布正在维修，会议记录格式照旧。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请记录两个要点，顺序为：检查传感器；备份日志。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

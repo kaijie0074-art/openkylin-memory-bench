@@ -1,0 +1,29 @@
+{
+  "id": "boundary-006",
+  "ability": "boundary",
+  "family": "superseded_unverified_rumor",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "正式仓库位置是 Shelf-3，位置卡 location.json 含 shelf。未经负责人确认的传闻不得覆盖正式位置。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "有人猜测可能搬到 Shelf-8，但负责人尚未确认；这是未核实消息。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按已确认信息生成当前位置卡，并在最终回复中说明采用该信息、未采用其他消息的依据。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

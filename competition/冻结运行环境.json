@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "role": "actual_openkylin_engineering_v3_conditions",
+  "captured": "2026-10-02",
+  "platform": {
+    "host": "macOS ARM64 (VM controller only)",
+    "evaluation_os": "openKylin 3.0 ARM64 Live desktop",
+    "kernel_arch": "aarch64",
+    "python": "3.12.2",
+    "docker": "24.0.7-ok3",
+    "docker_cli_directory": "/opt/system/bin",
+    "vm_memory_gib": 6,
+    "data_disk": "12 GiB ext4 /mnt/kmb",
+    "agent_userspace": "Debian ARM64 Docker containers",
+    "agentos_sdk_integration": "not_performed",
+    "x86_64_validation": "not_performed"
+  },
+  "protocol_file_sha256": "8f3c22d49b28a8e2ab1319aa5b6ec84796f02b9aa0daed6d66a48920466b8542",
+  "experiment_fingerprint": "951f96bfce93484f7fbe0e16da09336fb53f95f223edc12beb42e0c94e466b4a",
+  "execution_conditions": {
+    "hermes": {
+      "requested": "gpt-5.5",
+      "returned": "gpt-5.5",
+      "provider": "http://127.0.0.1:8080",
+      "transport": "chat_completions",
+      "image_id": "sha256:1d0709138a34cde8dd0c305de53a20911c9a204a699df239a62730792eebe22d",
+      "agent_version": "Hermes Agent vunknown (2026.9.24)\nInstall directory: /opt/hermes\nInstall method: git\nPython: 3.14.2\nOpenAI SDK: 2.24.0",
+      "parameters": {
+        "endpoint_sha256": "75a5be964d6e0f344c4bd3cf366443183784a28430c4a2e7ee101ef94fdad83e",
+        "transport": "chat_completions",
+        "stream_upstream": false,
+        "timeout_seconds": 600,
+        "upstream_timeout_seconds": 180.0,
+        "requested_inference_parameters": [
+          {
+            "reasoning_effort": "medium"
+          },
+          {
+            "reasoning_effort": "none",
+            "response_format": {
+              "type": "json_schema",
+              "json_schema": {
+                "name": "session_title",
+                "strict": true,
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            }
+          }
+        ],
+        "max_tool_actions": 20
+      }
+    },
+    "openclaw": {
+      "requested": "gpt-5.5",
+      "returned": "gpt-5.5",
+      "provider": "http://127.0.0.1:8080",
+      "transport": "chat_completions",
+      "image_id": "sha256:678ce0c64001c05afd76afce2ce5816f12fbe01036c68ed316bd30ce5ca8742d",
+      "agent_version": "OpenClaw 2026.9.6 (eb377ac)",
+      "parameters": {
+        "endpoint_sha256": "75a5be964d6e0f344c4bd3cf366443183784a28430c4a2e7ee101ef94fdad83e",
+        "transport": "chat_completions",
+        "stream_upstream": false,
+        "timeout_seconds": 600,
+        "upstream_timeout_seconds": 180.0,
+        "requested_inference_parameters": [
+          {
+            "max_completion_tokens": 8192,
+            "tool_choice": "auto"
+          }
+        ],
+        "max_tool_actions": 20
+      }
+    }
+  },
+  "scorer_conditions": {
+    "A": {
+      "scorer_version": "1",
+      "mode": "rules",
+      "judge": null
+    },
+    "B": {
+      "scorer_version": "1",
+      "mode": "model",
+      "judge": {
+        "requested": "gpt-5.5",
+        "returned": "gpt-5.5",
+        "provider": "http://127.0.0.1:8080",
+        "parameters": {
+          "api_style": "chat_completions",
+          "tools": false,
+          "endpoint_sha256": "75a5be964d6e0f344c4bd3cf366443183784a28430c4a2e7ee101ef94fdad83e",
+          "timeout_seconds": 180.0
+        }
+      }
+    },
+    "C": {
+      "scorer_version": "1",
+      "mode": "model",
+      "judge": {
+        "requested": "gpt-5.5",
+        "returned": "gpt-5.5",
+        "provider": "http://127.0.0.1:8080",
+        "parameters": {
+          "api_style": "chat_completions",
+          "tools": false,
+          "endpoint_sha256": "75a5be964d6e0f344c4bd3cf366443183784a28430c4a2e7ee101ef94fdad83e",
+          "timeout_seconds": 180.0
+        }
+      }
+    }
+  },
+  "budget": {
+    "seconds_per_case": 600,
+    "tool_actions_per_case": 20
+  },
+  "build_backend_observed": "hatchling 1.32.4 (build-system requirement not version-pinned)",
+  "runtime_dependencies": "uv.lock",
+  "image_rebuild_limitation": "Dockerfile OS packages and upstream transitive dependencies are not byte-identical locks; import actual digest or register a new experiment",
+  "credentials_included": false
+}

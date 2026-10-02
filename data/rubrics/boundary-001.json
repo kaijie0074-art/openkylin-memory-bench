@@ -1,0 +1,15 @@
+{
+  "task_id": "boundary-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "priority.json",
+      "expected": {
+        "priority": "normal"
+      },
+      "description": "交付文件 priority.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

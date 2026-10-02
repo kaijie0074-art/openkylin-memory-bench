@@ -1,0 +1,29 @@
+{
+  "id": "boundary-005",
+  "ability": "boundary",
+  "family": "project_local_preference_not_global",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "只有摄影项目要求文件名大写；文档项目沿用小写 notes.txt。两者互不继承这项偏好，文本正文原样保存。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "摄影项目的额外排版讨论已结束，当前接回文档项目。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为文档项目保存记录：核对目录。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

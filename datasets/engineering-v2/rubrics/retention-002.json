@@ -1,0 +1,17 @@
+{
+  "task_id": "retention-002",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "notice.json",
+      "expected": {
+        "language": "zh-CN",
+        "timezone": "Asia/Shanghai",
+        "message": "服务维护完成"
+      },
+      "description": "交付文件 notice.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "update-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "sensor.json",
+      "expected": {
+        "sampling_rate": 50,
+        "unit": "Hz",
+        "enabled": true
+      },
+      "description": "把正式纠正的20ms周期换算为50Hz，拒绝旧的20Hz误记和未批准的10ms提案，并保留启用状态",
+      "critical": true
+    }
+  ]
+}

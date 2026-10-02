@@ -1,0 +1,29 @@
+{
+  "id": "boundary-004",
+  "ability": "boundary",
+  "family": "expired_event_discount",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "优惠在活动结束前为 0.8，结束后恢复 1.0。pricing.json 只含 multiplier。本轮先说明期限规则。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "活动已经结束，没有续期通知。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为现在的新订单生成价格乘数配置。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

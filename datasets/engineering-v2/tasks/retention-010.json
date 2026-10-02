@@ -1,0 +1,39 @@
+{
+  "id": "retention-010",
+  "ability": "retention",
+  "family": "incremental_journal_across_project_interruptions",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "本研究项目使用 journal.csv 持久积累事件，表头固定为 sequence,event。编号从1开始按记录顺序递增，已有行的编号和事件正文必须保留，每次新增研究事件都在原记录后积累，不得只保留最新一条；不要把其他项目或临时事项写入。本轮请建立日志，第一条事件正文为“基线测量完成”（不含引号）。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "插入一个临时标签演示：本轮用代号 TMP-6 在回复中确认演示即可。它不是研究事件，不添加到研究日志。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "回到研究项目，新增一条日志事件，正文为“双人复测完成”（不含引号）。请按既定日志规则积累，保留已有事件。",
+      "final": false
+    },
+    {
+      "id": "s4",
+      "prompt": "切换到另一项目的采购讨论：展示架预计周五交货。这条消息只是讨论，不属于研究事件，不写入本研究日志。",
+      "final": false
+    },
+    {
+      "id": "s5",
+      "prompt": "回到研究日志，补记新事件“封存样品”（不含引号），交付按既定规则积累的完整日志。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

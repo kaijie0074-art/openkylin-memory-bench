@@ -1,0 +1,29 @@
+{
+  "id": "boundary-001",
+  "ability": "boundary",
+  "family": "one_use_priority_override",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "正常交付 priority.json，priority 字段为 normal。接下来仅一张紧急工单可临时用 urgent，处理完立刻回到 normal。先不要生成。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "那张紧急工单已由同伴处理完毕，临时例外已经消耗；现在没有新的紧急授权。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为下一张普通工单生成 priority.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

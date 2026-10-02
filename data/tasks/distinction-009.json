@@ -1,0 +1,29 @@
+{
+  "id": "distinction-009",
+  "ability": "distinction",
+  "family": "document_draft_vs_signed",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "合同 Draft-7 的交付日为10月8日；Signed-7 的交付日为10月12日。contract.json 含 edition、delivery_date，日期用 YYYY-MM-DD，年份2026。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "草案仍在目录里留档，当前执行应以明确指定版本为准。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请抽取 Signed-7 的交付日生成合同数据。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

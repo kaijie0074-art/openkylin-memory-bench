@@ -1,0 +1,19 @@
+{
+  "task_id": "distinction-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "effective.json",
+      "expected": {
+        "device": "sensor-A",
+        "theme": "dark",
+        "retry_limit": 5,
+        "log_level": "debug",
+        "timezone": "UTC"
+      },
+      "description": "sensor-A 按键继承根与 printbench 项目配置，再应用自身覆盖；不遗漏祖先字段，也不混入兄弟节点的值",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "update-005",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "ticket.json": "{\n  \"temperature\": 75,\n  \"priority\": \"urgent\"\n}\n"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

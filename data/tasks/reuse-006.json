@@ -1,0 +1,29 @@
+{
+  "id": "reuse-006",
+  "ability": "reuse",
+  "family": "filename_slug_normalization",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "资源命名流程：去掉标题首尾空格，转小写，把内部连续空格合并替换成一个连字符，最后加 .txt。把得到的文件名写到 filename.txt，不创建那个资源文件。先记。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "标点无需额外处理；本批标题只有英文字母和空格。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按流程处理标题“  Sensor   Quick Start  ”。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

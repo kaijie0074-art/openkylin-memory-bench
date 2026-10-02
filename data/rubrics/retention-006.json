@@ -1,0 +1,16 @@
+{
+  "task_id": "retention-006",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "stock.json",
+      "expected": {
+        "quantity": 8,
+        "unit": "box"
+      },
+      "description": "交付文件 stock.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "distinction-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "profile.json",
+      "expected": {
+        "batch": "W-B",
+        "nozzle_celsius": 215
+      },
+      "description": "交付文件 profile.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

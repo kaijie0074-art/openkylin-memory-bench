@@ -1,0 +1,17 @@
+{
+  "task_id": "update-007",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "mapping.json",
+      "expected": {
+        "未处理": "todo",
+        "处理中": "in_progress",
+        "已完成": "done"
+      },
+      "description": "交付文件 mapping.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "recall-002",
+  "ability": "recall",
+  "family": "equipment_calibration_cycle",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "设备维护知识：天平每 30 天校准，温度探头每 14 天校准，游标卡尺每 90 天校准。维护单 maintenance.json 只含 device、interval_days。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "办公室绿植每周浇水；这不是设备维护周期。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为温度探头生成维护单，device 使用 temperature_probe。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

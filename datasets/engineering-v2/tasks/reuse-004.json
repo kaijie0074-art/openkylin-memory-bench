@@ -1,0 +1,29 @@
+{
+  "id": "reuse-004",
+  "ability": "reuse",
+  "family": "meeting_action_template",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "行动项模板：输入负责人、动作、期限，输出 action.txt，严格格式为“负责人：{负责人}\n动作：{动作}\n期限：{期限}”。暂不生成。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "以后换内容时也维持这三个标签及顺序。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请整理行动项：负责人小林，动作检查电源，期限周五。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

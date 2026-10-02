@@ -1,0 +1,29 @@
+{
+  "id": "recall-003",
+  "ability": "recall",
+  "family": "print_material_storage_rule",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "材料管理约定：PLA 存常温干燥柜，TPU 存低湿密封盒，树脂存避光柜。材料卡 material.json 含 material 和 storage，名称按这次记录原文。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "打印机喷嘴清洁由值班同伴负责。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成 TPU 的材料卡。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

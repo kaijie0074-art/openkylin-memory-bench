@@ -1,0 +1,29 @@
+{
+  "id": "update-009",
+  "ability": "update",
+  "family": "future_policy_preserves_history",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "运费约定：2026-10-01 之前的订单按 6 元；价格表 price.json 需分别记录 order_old 和 order_new 两笔金额。先记规则。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "生效通知：2026-10-01 起新订单运费为 9 元，历史订单费用不追溯调整。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请记录9月30日的 order_old 和10月2日的 order_new 的运费金额。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

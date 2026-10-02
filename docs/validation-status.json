@@ -1,0 +1,564 @@
+{
+  "date": "2026-10-02",
+  "phase": "engineering_v3_delivery_complete",
+  "tests_passed": 592,
+  "ruff": "passed",
+  "packages": [
+    "wheel",
+    "sdist"
+  ],
+  "installed_package_dataset_count": 60,
+  "controlled_evidence_count": 24,
+  "controlled_evidence_provenance": "simulated",
+  "real_agent_cli_probes": [
+    "openclaw",
+    "hermes"
+  ],
+  "real_model_benchmark_runs": 108,
+  "proxy_probe": {
+    "http_status": 503,
+    "code": "no_available_account",
+    "account_status": "unauthorized",
+    "production_config_changed": false,
+    "scope": "historical_community_server"
+  },
+  "openkylin_validation": "two_agent_development_smoke_and_abc_passed_as_pipeline; one_task_success_one_task_failure",
+  "human_review": "one_actual_user_label_saved; diagnostic_triage_queue_ready; peer_pending",
+  "selection": "historical_v1_retained; engineering_v2_openkylin_36_real_runs_and_108_abc_scores_complete",
+  "holdout": "v3 eligible engineering matrix: 108 real runs (107 completed, 1 budget exhausted), 324 scored, 0 infrastructure/scoring errors; prior v2 failures retained separately",
+  "engineering_validation": {
+    "implementation": "freeze-engineering_and_mutually_exclusive_protocol_flags_pass_local_tests",
+    "dataset": "datasets/engineering-v2",
+    "dataset_audit": "passed_static_ai_audit_not_independent_human_review",
+    "selection_v2": "36_real_runs_complete; 18_openclaw_and_18_hermes_completed; 108_abc_scores_complete; reports/engineering-v2-selection-20260928",
+    "development_smoke_v2": "two_real_agents_completed; six_abc_scores_pass; reports/engineering-v2-smoke-20260928",
+    "designed_controls_v2": "all_8_controls_matched_for_B_and_C; A_matched_7_with_explicit_undetermined; zero_critical_false_passes; reports/engineering-v2-controls-20260928",
+    "protocol_frozen": true,
+    "protocol": "reports/engineering-v2-protocol-20260930.json",
+    "protocol_sha256": "5bb67ab639e0fbd1085fb44a93571eaa3d53dde536631df6376b7298fa13ce60",
+    "holdout_status": "v3 engineering holdout complete and protocol-bound; 108 real evidence, 324 ABC scores, zero execution/scoring errors; no independent human validation",
+    "holdout_real_runs": 108,
+    "abc_holdout_scores": 324,
+    "human_validation": "not_performed",
+    "scorer_winner": null,
+    "desktop_video": "real openKylin desktop video validated; 880.3s raw and 207.4s edited highlights; two new real agent runs completed, both objective fail",
+    "current_platform_issue": "recovered: optional_kytensor_masked_after_swap; Docker_and_SSH_validated; dedicated_ext4_disk_and_historical_evidence_retained",
+    "holdout_first_batch": {
+      "evidence": "reports/engineering-v2-holdout-20260930",
+      "real_runs": 108,
+      "completed": 18,
+      "budget_exhausted": 2,
+      "infrastructure_error": 88,
+      "scores": 324,
+      "formal_eligible": false,
+      "incident": "docs/engineering-holdout-incident.md",
+      "report": "reports/engineering-v2-holdout-aborted-report-20261001/index.html",
+      "score_records_not_scored": 264
+    },
+    "holdout_recovery": {
+      "guest_output": "/mnt/kmb/reports/engineering-v2-holdout-recovery-20261001",
+      "host_copy": "reports/engineering-v2-holdout-recovery-20261001",
+      "status": "aborted_after_intermittent_upstream_timeout",
+      "real_runs": 6,
+      "completed": 2,
+      "infrastructure_error": 4,
+      "scores": 0,
+      "formal_eligible": false,
+      "same_protocol_sha256": "5bb67ab639e0fbd1085fb44a93571eaa3d53dde536631df6376b7298fa13ce60"
+    },
+    "next_protocol": "v3 source, frozen evidence, package and video delivered; future independent human calibration requires a separate protocol",
+    "v3_timeout_smoke": {
+      "evidence": "reports/engineering-v3-timeout-smoke-20261001",
+      "split": "dev",
+      "task": "update-001",
+      "real_runs": 2,
+      "openclaw": "infrastructure_error model_gateway_upstream_error",
+      "hermes": "budget_exhausted native_cli_timeout with repeated upstream HTTP errors",
+      "formal_eligible": false,
+      "upstream_timeout_seconds": 180,
+      "incident": "docs/engineering-holdout-incident.md"
+    },
+    "v3_development_closures": {
+      "split": "dev",
+      "tasks": [
+        "update-001",
+        "boundary-001"
+      ],
+      "evidence": [
+        "reports/engineering-v3-gateway-status-smoke-20261001",
+        "reports/engineering-v3-boundary-smoke-20261001"
+      ],
+      "real_runs": 4,
+      "completed": 4,
+      "abc_scores": 12,
+      "formal_eligible": false,
+      "update_001": {
+        "hermes": "pass in A/B/C",
+        "openclaw": "fail in A/B/C"
+      },
+      "boundary_001": {
+        "hermes": "pass in A/B/C",
+        "openclaw": "pass in A/B/C"
+      }
+    },
+    "selection_v3": {
+      "evidence": "reports/engineering-v3-selection-20261001/runs",
+      "scores": "reports/engineering-v3-selection-20261001/scores",
+      "status": "complete",
+      "real_runs": 36,
+      "completed": 34,
+      "budget_exhausted": 2,
+      "infrastructure_error": 0,
+      "abc_scores": 108,
+      "score_errors": 0,
+      "agent_counts": {
+        "openclaw": 18,
+        "hermes": 18
+      }
+    },
+    "designed_controls_v3": "8 controls: A matched 7 with explicit semantic undetermined; B/C matched 8; zero critical false passes or unsupported passes; reports/engineering-v3-controls-20261001",
+    "protocol_v3": "reports/engineering-v3-protocol-20261001.json",
+    "protocol_v3_sha256": "8f3c22d49b28a8e2ab1319aa5b6ec84796f02b9aa0daed6d66a48920466b8542",
+    "protocol_v3_experiment_fingerprint": "951f96bfce93484f7fbe0e16da09336fb53f95f223edc12beb42e0c94e466b4a",
+    "holdout_v3": {
+      "guest_output": "/mnt/kmb/reports/engineering-v3-holdout-20261001",
+      "host_copy": "reports/engineering-v3-holdout-20261001",
+      "status": "completed",
+      "real_runs": 108,
+      "completed": 107,
+      "budget_exhausted": 1,
+      "infrastructure_error": 0,
+      "execution_unknown": 0,
+      "abc_scores": 324,
+      "score_errors": 0,
+      "objective_pass_openclaw": "31/54",
+      "objective_pass_hermes": "26/54",
+      "overall_verdict_differences": 0,
+      "criterion_differences": 6,
+      "stable_task_agent_groups": "29/36",
+      "engineering_protocol_eligible": true,
+      "human_validation": "not_performed",
+      "scorer_winner": null,
+      "report": "reports/engineering-v3-holdout-20261001/report/index.html",
+      "results": "docs/engineering-v3-results.md"
+    },
+    "deb_v3": {
+      "artifact": "dist/openkylin-memory-bench_0.1.0-3_arm64.deb",
+      "sha256": "64cc1adb2e0238c9faf46812a63c006bfcb5076fd7703b34aae5e256b5f1fdc1",
+      "bytes": 80827666,
+      "build_record": "reports/deb-build-engineering-v3/build-result.json",
+      "installation_record": "reports/deb-install-engineering-v3/acceptance.json",
+      "offline_installation": "passed",
+      "ordinary_user_batch": "passed_simulation_only",
+      "remove_reinstall": "passed_user_artifacts_unchanged",
+      "installed_holdout_report_comparison": "byte_identical_to_development_report_data",
+      "installed_dev_A_offline_rescore": "two_records_criteria_and_verdicts_identical",
+      "real_agent_demo": "two installed-package real agent runs completed; A/B/C six scores all fail on absent required file; not part of holdout"
+    }
+  },
+  "visual_review": "real openKylin Firefox report verified; raw and edited desktop video decoded and visually inspected; reviewer PDF 13 pages rendered for inspection",
+  "html_local_links_checked": 25,
+  "local_proxy": {
+    "status": "ready",
+    "requested_model": "gpt-5.5",
+    "returned_model": "gpt-5.5",
+    "json_probe": "passed",
+    "tool_roundtrip": "passed",
+    "proxy_tests": "go test ./proxy passed",
+    "autostart_enabled": false,
+    "binary": "codex2api-bench-final",
+    "structured_judge": "real_strict_json_passed_with_deduplicated_evidence_projection"
+  },
+  "historical_real_smoke": {
+    "task": "update-001",
+    "environment": "Mac host / Debian ARM64 containers, not openKylin",
+    "openclaw": {
+      "execution": "completed",
+      "new_path_file_correct": true,
+      "absence_check": "undetermined_incomplete_inventory"
+    },
+    "hermes": {
+      "execution": "infrastructure_error",
+      "reason": "trial_closed_with_auxiliary_request_in_flight",
+      "new_path_file_present": false
+    },
+    "results": "reports/real-local-proxy-smoke",
+    "selection_eligible": false,
+    "model_judge": "invalid_judge_json; retained as scoring failure"
+  },
+  "real_smoke": {
+    "task": "update-001",
+    "environment": "Mac host / Debian ARM64 containers, not openKylin",
+    "results": "reports/real-local-proxy-smoke-v2",
+    "agents": {
+      "openclaw": {
+        "execution": "completed",
+        "sessions": 3,
+        "file_inventory_complete": true,
+        "new_path_file_correct": true,
+        "obsolete_path_absent": true,
+        "gateway_settled": true
+      },
+      "hermes": {
+        "execution": "completed",
+        "sessions": 3,
+        "file_inventory_complete": true,
+        "new_path_file_correct": true,
+        "obsolete_path_absent": true,
+        "gateway_settled": true
+      }
+    },
+    "abc_scoring": {
+      "records": 6,
+      "scored_pass": 6,
+      "errors": 0
+    },
+    "selection_eligible": false,
+    "limitation": "One development task verifies the loop, not broad memory reliability."
+  },
+  "test_scope": "Engineering-v3 local suite 592 passed; Ruff passed; no real model calls in tests. Separate model-backed development diagnostics are not formal scores.",
+  "git_diff_check": "passed_2026-09-28",
+  "real_model_benchmark_runs_scope": "current_engineering_v3_holdout_only; selection, development and historical batches are listed separately",
+  "openkylin_iso": {
+    "filename": "openKylin-Desktop-V3.0-20260905-arm64.iso",
+    "bytes": 7348721664,
+    "official_source": "https://releases.openkylin.top/3.0/openKylin-Desktop-V3.0-20260905-arm64.iso",
+    "checksum_source": "https://www.openkylin.top/downloads/os-en.html",
+    "checksum_source_image_id": 132,
+    "official_expected_md5": "62180a4fe3a9236a6ed1a93f9af7b52d",
+    "md5": "62180a4fe3a9236a6ed1a93f9af7b52d",
+    "sha256": "32b5bee3f56ee0d789766789d9da80ba4374e7c4b615449d845af4b770808ec9",
+    "checksum_verified": true,
+    "download_sources": [
+      "https://releases.openkylin.top/3.0/openKylin-Desktop-V3.0-20260905-arm64.iso",
+      "https://mirror.nju.edu.cn/openkylin-cdimage/3.0/openKylin-Desktop-V3.0-20260905-arm64.iso"
+    ],
+    "download_provenance_file": "download-source-switch.json",
+    "evidence": ".runtime/openkylin-vm/image-verified.json",
+    "vm_status": "Running",
+    "desktop_boot_verified": true,
+    "serial_login_verified": true
+  },
+  "pilot": {
+    "status": "execution_and_uniform_abc_rescore_finished",
+    "planned_tasks_per_agent": 12,
+    "planned_agents": [
+      "openclaw",
+      "hermes"
+    ],
+    "planned_runs": 24,
+    "final_completed_count": 24,
+    "results": "reports/real-pilot-v1",
+    "protocol": "loaded_protocol_preserved; rescore_frozen_evidence_uniformly_under_new_protocol_after_completion",
+    "formal_selection_eligible": false,
+    "execution_status_counts": {
+      "completed": 23,
+      "budget_exhausted": 1
+    },
+    "rule_rescore": {
+      "directory": "reports/real-pilot-v1/rule-rescore-v2",
+      "openclaw": {
+        "pass": 8,
+        "fail": 4
+      },
+      "hermes": {
+        "pass": 9,
+        "fail": 2,
+        "undetermined": 1
+      },
+      "interpretation": "Artifact verdicts; one passing artifact still exceeded execution budget. No human calibration yet."
+    },
+    "abc_rescore": {
+      "directory": "reports/real-pilot-v1/abc-rescore-v2",
+      "records": 72,
+      "scoring_errors": 0,
+      "report": "reports/real-pilot-v1/abc-report-v2/index.html",
+      "verdicts": {
+        "openclaw": {
+          "A": {
+            "pass": 8,
+            "fail": 4
+          },
+          "B": {
+            "pass": 8,
+            "fail": 4
+          },
+          "C": {
+            "pass": 8,
+            "fail": 4
+          }
+        },
+        "hermes": {
+          "A": {
+            "pass": 9,
+            "fail": 2,
+            "undetermined": 1
+          },
+          "B": {
+            "pass": 10,
+            "fail": 2
+          },
+          "C": {
+            "pass": 10,
+            "fail": 2
+          }
+        }
+      },
+      "human_validated": false
+    }
+  },
+  "subject_isolation": {
+    "status": "passed_both_agents",
+    "entrypoint": "scripts/probe_subject_isolation.py",
+    "results": "reports/subject-isolation-v1",
+    "real_trials": 4,
+    "writer_marker_verified": true,
+    "reader_unknown_verified": true,
+    "marker_observed_in_reader_files_or_memory": false,
+    "limitation": "One fresh-subject observation per agent; not proof of hidden-memory deletion."
+  },
+  "scorer_calibration": {
+    "controls": 8,
+    "expectation_source": "designed_control_expectation_not_human_review",
+    "freeze_gate": "implemented_and_locally_tested",
+    "real_judge_control_run": "passed",
+    "entrypoint": "scripts/calibrate-scorers.py",
+    "results": "reports/scorer-controls-v1",
+    "scoring_records": 24,
+    "critical_criteria": 7,
+    "critical_false_passes": 0,
+    "critical_unsupported_passes": 0,
+    "expected_case_matches": {
+      "A": 7,
+      "B": 8,
+      "C": 8
+    },
+    "model": "gpt-5.5",
+    "bound_to_pilot_judge": true,
+    "limitation": "Designed synthetic controls, not human-reviewed reliability or real-agent scores. A abstains on semantic positive control."
+  },
+  "package_validation": {
+    "status": "frozen_python_source_isolated_install_and_offline_demo_passed",
+    "record": "reports/package-validation-20260928-final/summary.json",
+    "dataset_total": 60,
+    "simulated_evidence": 24,
+    "scores": 72,
+    "model_calls": 0,
+    "is_final_frozen_release": false,
+    "limitation": "Stage Python protocol artifact; documentation updated after archive creation. Not full platform/human/holdout acceptance.",
+    "wheel_sha256": "7a2b9b66cb54fa9d5912563e09337777a8dbea3f52c0c21b425268feba49bf91",
+    "wheel_matches_frozen_source": true
+  },
+  "openkylin_guest": {
+    "evidence": ".runtime/openkylin-vm/guest-observation.json",
+    "os": "openKylin 3.0 huanghe",
+    "kernel": "7.0.0-2-generic aarch64",
+    "python": "3.12.2",
+    "memory_gib": 6,
+    "available_memory": "variable; 2.2Gi after disabling guest kytensor, before Docker workloads",
+    "ssh_ready": true,
+    "data_disk_formatted": true,
+    "benchmark_executed": true,
+    "benchmark_status": "two_agent_update_001_completed; openclaw artifact pass, hermes artifact fail",
+    "machine_evidence": ".runtime/openkylin-vm/guest-machine-evidence.json",
+    "runner_uid": 10001,
+    "swap_gib": 2,
+    "system_mode": "Live; system overlay ephemeral, data disk persistent",
+    "docker": "24.0.7-ok3",
+    "cli_probes": "both_passed",
+    "container_gateway_probe": "passed_without_model_call",
+    "protocol_fingerprint": "d0c5df0a3a11b5162de1acf4284e613cc669f8088bb3ba54808e57e493dfb6c8",
+    "desktop_evidence": ".runtime/openkylin-vm/desktop-environment-deployed.png"
+  },
+  "openkylin_smoke": {
+    "results": "reports/openkylin-smoke-v1",
+    "task": "update-001",
+    "runs": 2,
+    "execution_status": "both_completed",
+    "sessions_each": 3,
+    "abc_records": 6,
+    "scoring_errors": 0,
+    "openclaw": "ABC_pass",
+    "hermes": "ABC_fail_required_artifact_absent",
+    "platform_binding": "reports/openkylin-smoke-v1/platform-binding.json",
+    "session_verification": "reports/openkylin-smoke-v1/run-verification.json",
+    "human_review": false,
+    "selection_eligible": false,
+    "limitation": "One development task; openKylin trusted runner with fixed Debian userspace containers; Live system overlay ephemeral."
+  },
+  "openkylin_subject_isolation": {
+    "status": "both_passed",
+    "results": "reports/openkylin-isolation-v1",
+    "trials": 4,
+    "limitation": "fresh-subject visible observation; not hidden-memory deletion proof"
+  },
+  "openkylin_selection": {
+    "status": "evidence_and_abc_scoring_complete_not_human_reviewed",
+    "planned_runs": 36,
+    "tasks_per_agent": 18,
+    "agents": [
+      "openclaw",
+      "hermes"
+    ],
+    "guest_results": "/mnt/kmb/reports/openkylin-selection-v1",
+    "human_review": "one_user_label_saved; focused_review_and_random_audit_ready; peer_not_yet_available",
+    "scorer_selected": false,
+    "runs": 36,
+    "execution_statuses": {
+      "completed": 35,
+      "budget_exhausted": 1
+    },
+    "score_records": 108,
+    "scoring_errors": 0,
+    "results": "reports/openkylin-selection-v1",
+    "matrix_verification": "reports/openkylin-selection-v1/matrix-verification.json",
+    "session_id_limitation": "OpenClaw recall-005 budget_exhausted; final session ID missing; raw evidence preserved",
+    "blind_review": "reports/openkylin-selection-v1/blind-review-v1",
+    "automatic_scores_shown_to_humans": false
+  },
+  "batch_entrypoint": {
+    "entrypoint": "scripts/run-benchmark.py",
+    "tests_passed": 49,
+    "integration": "host_simulation_run_score_report_passed; existing_output_preserved; infrastructure_error_stops_pipeline",
+    "results": [
+      "reports/batch-entry-validation-v1",
+      "reports/batch-entry-failure-v1"
+    ],
+    "model_calls": 0,
+    "openkylin_entrypoint_verified": true,
+    "openkylin_scope": "installed /usr/bin/kmb-batch: 12 simulated runs, 12 rule scores and HTML; model calls0"
+  },
+  "deb_package": {
+    "entrypoint": "scripts/build-deb.py",
+    "tests_passed": 60,
+    "independent_code_review": "passed",
+    "inputs_preparation": "passed_host_default_inspection",
+    "linux_build": "built",
+    "clean_install": "passed_offline_installation_and_simulation_same_vm_fresh_live_overlay",
+    "limitation": "v3 offline installation validated in guest network namespace with ordinary-user simulated batch; installed executable separately re-scored original real evidence and generated byte-identical comparison data. Package embeds original 60 tasks; frozen v3 experiment requires datasets/engineering-v2 supplied separately. Prior revision2 fields retained in prior_revision2_details.",
+    "wheel_count": 83,
+    "requirements_sha256": "50607f5aa76890213b1b4d5ecd686694206c6beb04de3c9790472475f00f1c32",
+    "failure_record": ".runtime/openkylin-vm/deb-build-v1-result.json",
+    "first_build_diagnosis": "Locked debugpy universal wheel includes one x86_64 attach helper; strict ldd on ARM64 rejected it. Exact path/header/hash exception preserves it and documents it; other foreign ELF remain rejected.",
+    "build_record": "reports/deb-build-engineering-v3/build-result.json",
+    "artifact": "dist/openkylin-memory-bench_0.1.0-3_arm64.deb",
+    "sha256": "64cc1adb2e0238c9faf46812a63c006bfcb5076fd7703b34aae5e256b5f1fdc1",
+    "bytes": 80827666,
+    "native_elf_checked": 43,
+    "preserved_pinned_foreign_helpers": 1,
+    "installation_record": "reports/deb-install-engineering-v3/acceptance.json",
+    "installed_fingerprint_matches_frozen": true,
+    "offline_model_calls": 0,
+    "same_version_reinstall_and_remove_reinstall": "passed_user_artifacts_unchanged",
+    "different_version_upgrade": "not_performed",
+    "installed_real_agent_smoke": "passed_two_agents_development_demo; both execution completed, both file tasks failed in A/B/C; prior v2 smoke retained",
+    "prior_installation_attempts": [
+      {
+        "record": "reports/deb-install-v1/acceptance.json",
+        "status": "failed_verifier_contract_not_product",
+        "reason": "temporary directory canonical path /tmp -> /var/tmp; failed before installation"
+      },
+      {
+        "record": "reports/deb-install-v2/acceptance.json",
+        "status": "failed_verifier_contract_not_product",
+        "reason": "installation prefix canonical path /opt -> /var/opt; payload installation passed"
+      },
+      {
+        "record": "reports/deb-install-v3/acceptance.json",
+        "status": "failed_verifier_contract_not_product",
+        "reason": "offline C semantic partial-unknown expected result was incorrectly rejected; no core changes"
+      }
+    ],
+    "prior_revision2_details": {
+      "inputs_manifest": ".runtime/deb-inputs-v1/summary.json",
+      "wheel_bytes": 101861851,
+      "installation_archive_sha256": "6a0fb066817d672e039573a9e60e447be7d054649136d3f98852ed7d6a630d65",
+      "installed_files_and_links_verified": 8888,
+      "installed_real_agent_record": "reports/deb-installed-smoke-v1/host-run-verification.json",
+      "installed_real_agent_archive_sha256": "701d15cb5d0ca2605de70e5f95c0beaf474b9fb8837284023820a6fae2be49df"
+    }
+  },
+  "openkylin_recovery": {
+    "entrypoints": [
+      "scripts/openkylin-bootstrap.py",
+      "scripts/openkylin-restore.py"
+    ],
+    "tests_passed": 69,
+    "independent_review": "passed",
+    "live_readonly_inspection": "passed_busy_restore_blocked",
+    "evidence": ".runtime/openkylin-vm/restore-inspect-during-selection-v2.json",
+    "cold_recovery": "passed_once_fresh_live_overlay_same_vm",
+    "cold_evidence": ".runtime/openkylin-vm/cold-restore-20260928T075026Z/cold-restore-result.json",
+    "ssh_port": 58313,
+    "model_calls": 0,
+    "model_tunnel_restored": true,
+    "public_files_hash_matched": 184,
+    "image_config_hashes_matched": true,
+    "limitation": "APFS data-disk clone not fully hashed; Live overlay remains ephemeral; model tunnel and .deb installation separate"
+  },
+  "desktop_recording": {
+    "status": "completed_real_openkylin_video_and_edited_highlights",
+    "installed_tool": "wf-recorder 0.6.0-ok1 from openKylin official signed repository; kylin-screencap built-in produced audio-only MP4",
+    "package_description": "full screen and customized area recording",
+    "ui_recording_verified": true,
+    "plan": "docs/demo-recording-plan.md",
+    "preflight": ".runtime/openkylin-vm/recording-preflight/followup-20260928T074627Z.json",
+    "limitation": "Edited highlights omit long waits and slow the final report segment by 3x; raw 880.3s is preserved; the two-task demo is dev split and both failed the file requirement; no audio narration.",
+    "mac_followup": ".runtime/openkylin-vm/recording-preflight/mac-native-followup-20260928.json",
+    "preflight_video": "reports/desktop-recording-preflight-20261001/openkylin-wf-preflight.mp4",
+    "preflight_sha256": "c695ca9209348565a4bea2ecfc572198ea6cfddee18b79616c818e954bfec5ba",
+    "preflight_probe": "7.6s H.264 2584x1618 77 frames; frame at 3s visually inspected",
+    "raw_video": "reports/desktop-recording-final-20261002/raw-openkylin-desktop-demo-20261002.mp4",
+    "raw_sha256": "94b48eb2a05a869a8d3d597762d8c4f0228ec076d47d008f1445fe4a03e7d02b",
+    "raw_duration_seconds": 880.3,
+    "edited_video": "reports/desktop-recording-final-20261002/edited-highlights-20261002.mp4",
+    "edited_duration_seconds": 207.4,
+    "new_real_demo_evidence": "reports/desktop-demo-real-20261002",
+    "real_demo_agent_results": {
+      "hermes": "completed; A/B/C fail",
+      "openclaw": "completed; A/B/C fail"
+    },
+    "edited_sha256": "86de24a148bc1ba502dc23ceab8b8edd78b82c083ff60030ec2c6c2b5417b952"
+  },
+  "latest_full_suite_attempt": {
+    "status": "interrupted_after_four_failures",
+    "passed_before_interrupt": 233,
+    "failures": 4,
+    "area": "local_gateway_deadline",
+    "isolated_reproduction": "first_gateway_test_failed_after_30.32s",
+    "core_protocol_unchanged": true,
+    "diagnosis": "HTTPServer server_bind host reverse DNS consumed 30.032 seconds before serving requests",
+    "resolution": "test-only local server-name fixture; full suite rerun passed 562 tests; actual Mac runtime limitation remains documented",
+    "subsequent_full_suite": "571 passed in 25.24s after packaging lock fix"
+  },
+  "human_review_triage": {
+    "queue": "reports/openkylin-selection-v1/human-triage-v1",
+    "queued": 16,
+    "user_labels": 1,
+    "peer_labels": 0,
+    "random_draw_count": 4,
+    "random_population": 36,
+    "purpose": "diagnostic_calibration_not_full_consensus",
+    "frozen_core_changed": false,
+    "scorer_selection_complete": false
+  },
+  "official_delivery_audit": {
+    "date": "2026-10-02",
+    "source_taskbook_sha256": "0f47d308d0c9ea2d11fecd6ec1b7bc230c258b4b446cbf1b672b27a398943ca0",
+    "five_technical_deliverables": "all_present_locally",
+    "source_build_on_openkylin": "sdist/wheel passed, cached offline build passed, hatchling 1.32.4",
+    "source_compile_on_openkylin": "passed",
+    "guest_snapshot_tests": 393,
+    "guest_snapshot_tests_seconds": 9.95,
+    "tests_scope": "full current source copied to fresh guest directory; existing fixed guest runtime reused; fresh uv cache insufficient for all dependencies",
+    "reviewer_config_dry_run": "3 configs passed; no model calls",
+    "repository_url": null,
+    "video_url": null,
+    "confirmation_attachment_rules": "not_checked",
+    "submission_complete": false,
+    "record": "competition/交付核对.json",
+    "guest_full_source_tests": 592,
+    "guest_full_source_tests_seconds": 9.26,
+    "test_portability_fix": "test audit compares hashes/content while checking actual local paths; original audit preserved"
+  }
+}

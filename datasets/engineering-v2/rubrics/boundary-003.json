@@ -1,0 +1,15 @@
+{
+  "task_id": "boundary-003",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "mode.json",
+      "expected": {
+        "mode": "safe"
+      },
+      "description": "交付文件 mode.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

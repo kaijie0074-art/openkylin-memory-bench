@@ -1,0 +1,29 @@
+{
+  "id": "update-001",
+  "ability": "update",
+  "family": "superseded_report_directory",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "报告原来交付到 old/report.txt，正文原样保存。本轮只记规则。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "正式变更：从现在起报告改放 current/report.txt，old/report.txt 已废止，不应再创建；其他格式不变。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按现行约定交付报告正文：样机检查完成。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "reuse-007",
+  "ability": "reuse",
+  "family": "weekly_budget_remaining",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "预算处理流程：输入 limit 和 expenses 数组，把所有 expenses 相加后从 limit 中扣除；输出 budget.json，字段 spent、remaining。不能因超支把负数截成零。先学习。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "金额均是同一币种的整数，本流程不涉及汇率。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请处理 limit=100，expenses=[40,35,45] 的本次预算。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

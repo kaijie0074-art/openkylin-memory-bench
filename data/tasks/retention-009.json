@@ -1,0 +1,29 @@
+{
+  "id": "retention-009",
+  "ability": "retention",
+  "family": "sample_label_order",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "样品标签交付 label.txt，字段顺序固定为批次/日期/编号，三个值用竖线连接，无空格。先记格式。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "仪器开机顺序为电脑再电源；这与标签字段顺序无关。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请给批次 B7、日期 2026-09-30、编号 014 生成约定标签。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

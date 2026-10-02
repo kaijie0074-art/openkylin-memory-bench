@@ -1,0 +1,9 @@
+{
+  "task_id": "reuse-004",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "action.txt": "负责人：小林\n动作：检查电源\n期限：周五"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

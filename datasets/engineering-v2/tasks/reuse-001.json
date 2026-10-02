@@ -1,0 +1,31 @@
+{
+  "id": "reuse-001",
+  "ability": "reuse",
+  "family": "csv_quality_filter",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "以后处理检验CSV时：只保留 status 为 pass 的行，按输入顺序取 id，输出 accepted.json，格式为字符串数组。本轮记住流程，暂不处理。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "返工件 fail 不能混入通过列表；这个判定不依赖编号大小。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按约定流程处理 input.csv。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "input.csv": "id,status\nB01,fail\nB02,pass\nB03,fail\nB04,pass\n"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

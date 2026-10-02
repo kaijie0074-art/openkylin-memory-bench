@@ -1,0 +1,16 @@
+{
+  "task_id": "distinction-002",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "deploy.json",
+      "expected": {
+        "environment": "staging",
+        "endpoint": "https://staging.invalid"
+      },
+      "description": "交付文件 deploy.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

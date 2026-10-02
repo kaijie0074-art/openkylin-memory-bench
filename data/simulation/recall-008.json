@@ -1,0 +1,9 @@
+{
+  "task_id": "recall-008",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "citation.json": "{\n  \"study\": \"覆膜试验\",\n  \"manuscript_id\": \"M17\",\n  \"title\": \"湿热耐久记录\",\n  \"record_id\": \"ARCH-306\"\n}\n"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

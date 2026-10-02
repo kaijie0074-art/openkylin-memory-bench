@@ -1,0 +1,29 @@
+{
+  "id": "distinction-003",
+  "ability": "distinction",
+  "family": "homonym_people_department",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "两位同名陈宁：设计组的工号 D17，测试组的工号 T42。人员卡 person.json 含 name、department、employee_id。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "本委托的身份判定以姓名和部门共同决定。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成测试组陈宁的人员卡。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

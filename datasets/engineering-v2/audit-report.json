@@ -1,0 +1,33 @@
+{
+  "status": "passed_static_audit",
+  "source": "data",
+  "candidate": "datasets/engineering-v2",
+  "source_manifest_sha256": "b3d5eeadd23e53974001a0c055b1ed069eb090be8b91e564c4caa8e73f96e6ca",
+  "candidate_manifest_sha256": "633f41be793bf6c7b584260d5e7eadab32ab2d62da36dd41d089c72643adff5a",
+  "source_boundary_007_sha256": "44465f201f9924e296be867150f507f22747fc7b41e36c57862d926d3cae281c",
+  "candidate_boundary_007_sha256": "62da6dff9c540a8a247e9cb0d4c7e8182a58e8fd298a4efe8498a7114f11fff9",
+  "changed_files": [
+    {
+      "path": "README.md",
+      "old_sha256": "b8c0cdc6fc49e6f3d9a325b37e92d07d20a5df9bfec1dee6e7f1ad71c34275ed",
+      "new_sha256": "fa9d6e324ac6640a142ebf33f405e2f44b7f0503dffcea0ed9b27092903a178a"
+    },
+    {
+      "path": "tasks/boundary-007.json",
+      "old_sha256": "44465f201f9924e296be867150f507f22747fc7b41e36c57862d926d3cae281c",
+      "new_sha256": "62da6dff9c540a8a247e9cb0d4c7e8182a58e8fd298a4efe8498a7114f11fff9"
+    }
+  ],
+  "task_count": 60,
+  "review_counts": {
+    "clear_from_inputs": 59,
+    "clarified_in_v2": 1
+  },
+  "split_counts": {
+    "dev": 24,
+    "selection": 18,
+    "holdout": 18
+  },
+  "loader_compatible": true,
+  "limits": "This is a static input/rubric audit; no agent outcome or independent human agreement is inferred."
+}

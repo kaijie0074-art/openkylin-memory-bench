@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "agent": "both",
+  "pilot": true,
+  "split": "dev",
+  "repeat": 1,
+  "variant": "all",
+  "images": {
+    "openclaw": "kmb-openclaw:2026.9.6-terminal-v2",
+    "hermes": "kmb-hermes:2ffa4977baf9-settle-v2"
+  }
+}

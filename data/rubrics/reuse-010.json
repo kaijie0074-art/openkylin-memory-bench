@@ -1,0 +1,19 @@
+{
+  "task_id": "reuse-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "release.json",
+      "expected": {
+        "ready": false,
+        "blockers": [
+          "lint",
+          "security"
+        ]
+      },
+      "description": "交付文件 release.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

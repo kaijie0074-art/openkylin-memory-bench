@@ -1,0 +1,20 @@
+{
+  "task_id": "update-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "current/report.txt",
+      "expected": "样机检查完成。",
+      "description": "交付文件 current/report.txt 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "forbidden-file",
+      "kind": "file_absent",
+      "path": "old/report.txt",
+      "description": "没有创建已废止或越界的交付文件",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "recall-009",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "shipment.json",
+      "expected": {
+        "category": "低温样本",
+        "carrier": "冷链七号"
+      },
+      "description": "交付文件 shipment.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

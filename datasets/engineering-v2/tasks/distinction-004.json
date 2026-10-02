@@ -1,0 +1,29 @@
+{
+  "id": "distinction-004",
+  "ability": "distinction",
+  "family": "similar_product_revisions",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "型号 P10 第一版接口为 USB-A；型号 P10 第二版接口为 USB-C。规格卡 spec.json 含 model、revision、connector。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "外壳颜色不能区分版本，以明确版本号为准。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成 P10 第二版规格卡，revision 写 2。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,9 @@
+{
+  "task_id": "retention-005",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "script.txt": "【开头】\n今天只演示传感器校准。\n\n【中段】\n先测量，再复测；不要省略复测。\n\n【结尾】\n请保留这次测量的原始记录。"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

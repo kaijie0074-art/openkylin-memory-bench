@@ -1,0 +1,29 @@
+{
+  "id": "update-002",
+  "ability": "update",
+  "family": "configuration_timeout_revision",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "连接配置交付 config.json，字段 timeout_seconds 初始为 30，retries 为 2。先记录。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "正式更新：timeout_seconds 改为 45；retries 保持 2。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成当前生效的连接配置。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

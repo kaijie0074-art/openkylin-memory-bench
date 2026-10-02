@@ -1,0 +1,16 @@
+{
+  "task_id": "update-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "ticket.json",
+      "expected": {
+        "temperature": 75,
+        "priority": "urgent"
+      },
+      "description": "交付文件 ticket.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "task_id": "recall-001",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "contact.json",
+      "expected": {
+        "incident": "network",
+        "owner": "周工"
+      },
+      "description": "交付文件 contact.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

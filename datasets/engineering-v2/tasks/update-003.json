@@ -1,0 +1,29 @@
+{
+  "id": "update-003",
+  "ability": "update",
+  "family": "membership_revocation",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "共享组初始成员依次为 A01、A02、A03。成员表 members.json 是字符串数组。先不写文件。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "权限变更已确认：移除 A02，加入 A04；保留其他成员原顺序，新成员追加末尾。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成当前共享组成员表。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "reuse-005",
+  "ability": "reuse",
+  "family": "inventory_delta_aggregation",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "盘点流程：读取 movements.csv，以 sku 分组加总 delta（可能负数）；输出 totals.json，为sku到整数总量的对象。不得忽略负数。先记。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "没有出现过的sku不生成零值条目。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按盘点流程处理本次 movements.csv。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "movements.csv": "sku,delta\nX,5\nY,4\nX,-2\n"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

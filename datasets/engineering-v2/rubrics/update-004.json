@@ -1,0 +1,16 @@
+{
+  "task_id": "update-004",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "order.json",
+      "expected": {
+        "customer_code": "C9",
+        "amount": 120
+      },
+      "description": "交付文件 order.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

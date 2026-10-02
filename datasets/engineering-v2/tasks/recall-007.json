@@ -1,0 +1,29 @@
+{
+  "id": "recall-007",
+  "ability": "recall",
+  "family": "service_rollback_command",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "部署应急手册：网页服务回滚命令为 deployctl web undo；队列服务回滚命令为 deployctl queue restore。只输出命令到 command.txt，绝不实际执行。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "日志检索另用 logctl，此消息未提供新的回滚方式。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为队列服务生成回滚命令文件，不执行命令。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

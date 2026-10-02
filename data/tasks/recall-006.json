@@ -1,0 +1,29 @@
+{
+  "id": "recall-006",
+  "ability": "recall",
+  "family": "experiment_reagent_pair",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "试验配对：实验甲使用试剂 Q 和缓冲液 B2，实验乙使用试剂 R 和缓冲液 B5。领料表 requisition.json 含 experiment、reagent、buffer。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "一次性手套共用同一个储物格。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按记录生成实验乙的领料表，experiment 写 experiment_b。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

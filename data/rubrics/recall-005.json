@@ -1,0 +1,17 @@
+{
+  "task_id": "recall-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "window.json",
+      "expected": {
+        "region": "north",
+        "start": "10:00",
+        "end": "15:00"
+      },
+      "description": "交付文件 window.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

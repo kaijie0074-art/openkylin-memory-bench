@@ -1,0 +1,10 @@
+{
+  "task_id": "reuse-003",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "tasks.json": "[{\"id\": \"A\", \"priority\": 2}, {\"id\": \"C\", \"priority\": 1}, {\"id\": \"B\", \"priority\": 1}]",
+    "ordered.json": "[\n  \"C\",\n  \"B\",\n  \"A\"\n]\n"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

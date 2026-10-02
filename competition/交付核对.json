@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "audited_at": "2026-10-02",
+  "scope": "one_openkylin_competition_only",
+  "official_homepage": "https://www.oschina.net/os2026/",
+  "official_taskbook_url": "https://apiv1.oschina.net/api/files/fhhc7e8z6no3gyt/w9qliatd2m6lgs8/ai_open_kylin_open_kylin_benchmark_XaCQyZepC8.pdf",
+  "official_taskbook_sha256": "0f47d308d0c9ea2d11fecd6ec1b7bc230c258b4b446cbf1b672b27a398943ca0",
+  "technical_deliverables": [
+    {
+      "id": "a",
+      "name": "方案说明",
+      "status": "provided_locally"
+    },
+    {
+      "id": "b",
+      "name": "真实样例",
+      "status": "provided_locally"
+    },
+    {
+      "id": "c",
+      "name": "源码与复现",
+      "status": "provided_locally_with_external_prerequisites"
+    },
+    {
+      "id": "d",
+      "name": "一键工具与安装包",
+      "status": "provided_locally"
+    },
+    {
+      "id": "e",
+      "name": "真实桌面视频",
+      "status": "provided_locally_raw_and_edited"
+    }
+  ],
+  "local_materials_ready": true,
+  "official_acceptance": "not_performed",
+  "submission_complete": false,
+  "public_fields": {
+    "repository_url": null,
+    "demo_video_url": null,
+    "team_identity": null,
+    "confirmation_attachment_rules": "not_checked"
+  },
+  "live_official_schedule": {
+    "page": 1,
+    "perPage": 50,
+    "totalItems": 3,
+    "totalPages": 1,
+    "items": [
+      {
+        "collectionId": "ao8iv12gmshvo71",
+        "collectionName": "ai2026_schedule",
+        "created": "2026-08-04 10:42:09.411Z",
+        "id": "j2n9d3joy3tre05",
+        "sort": 1,
+        "time": "即日起 — 10 月 16 日24:00前",
+        "title": "开放报名 & 作品提交",
+        "updated": "2026-09-23 14:51:09.646Z"
+      },
+      {
+        "collectionId": "ao8iv12gmshvo71",
+        "collectionName": "ai2026_schedule",
+        "created": "2026-08-04 10:42:09.543Z",
+        "id": "fctk9sewxifr1vn",
+        "sort": 2,
+        "time": "10 月 21 日",
+        "title": "入围名单公布",
+        "updated": "2026-09-23 14:51:20.931Z"
+      },
+      {
+        "collectionId": "ao8iv12gmshvo71",
+        "collectionName": "ai2026_schedule",
+        "created": "2026-08-04 10:42:09.693Z",
+        "id": "th0h1yl1aid62w8",
+        "sort": 3,
+        "time": "10 月 29 日",
+        "title": "线下总决赛",
+        "updated": "2026-09-11 16:02:04.635Z"
+      }
+    ]
+  },
+  "engineering_protocol_sha256": "8f3c22d49b28a8e2ab1319aa5b6ec84796f02b9aa0daed6d66a48920466b8542",
+  "experiment_fingerprint": "951f96bfce93484f7fbe0e16da09336fb53f95f223edc12beb42e0c94e466b4a",
+  "formal_holdout": {
+    "real_evidence": 108,
+    "scores": 324,
+    "statuses": {
+      "completed": 107,
+      "budget_exhausted": 1
+    },
+    "human_validation": "not_performed",
+    "scorer_winner": null,
+    "overall_verdict_differences": 0
+  },
+  "tests": {
+    "mac_latest_full_suite": 592,
+    "openkylin_snapshot_suite": 393,
+    "openkylin_snapshot_seconds": 9.95,
+    "scope_note": "Full source revalidated in a fresh guest directory with existing fixed runtime after a test-only absolute-path portability fix; original 393 snapshot record retained",
+    "ruff": "passed_on_mac",
+    "openkylin_full_source_suite": 592,
+    "openkylin_full_source_seconds": 9.26
+  },
+  "source_compile": "passed_on_openkylin",
+  "source_build": "sdist_and_wheel_passed_on_openkylin_cached_offline",
+  "build_backend_observed": "hatchling 1.32.4",
+  "videos": {
+    "raw_seconds": 880.3,
+    "edited_seconds": 207.4,
+    "unedited_raw_retained": true,
+    "demo_task": "update-001",
+    "demo_split": "dev",
+    "demo_runs": [
+      "89bba407222541739c5d28879feacf11",
+      "6d5c80ae194a4210b93c6834904758dd"
+    ],
+    "demo_outcomes": "completed_but_missing_required_file; ABC_fail",
+    "holdout_report_is_a_separate_batch": true
+  },
+  "no_publish_submit_email": true,
+  "portability_fix": {
+    "file": "tests/test_dataset_audit.py",
+    "scope": "ignore only original-machine location fields; all content/hash checks remain",
+    "core_fingerprint_unchanged": true,
+    "fresh_source_offline_dependency_install": "cache_missing_tiktoken; not_claimed_as_passed",
+    "zip_permission_note": "Python zipfile extraction loses executable bits despite ZIP metadata; POSIX tar provided"
+  }
+}

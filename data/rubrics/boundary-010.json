@@ -1,0 +1,19 @@
+{
+  "task_id": "boundary-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "schedule.json",
+      "expected": {
+        "title": "设备联合复测",
+        "earliest_date": "2026-10-15",
+        "latest_date": "2026-10-16",
+        "confirmed_date": null,
+        "status": "awaiting_confirmation"
+      },
+      "description": "对人员、场地、物流及项目期限四项约束取交集，同时将尚未确认的准确日期保留为 null，不能把可行日期当成确认",
+      "critical": true
+    }
+  ]
+}

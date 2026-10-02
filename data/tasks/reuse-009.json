@@ -1,0 +1,31 @@
+{
+  "id": "reuse-009",
+  "ability": "reuse",
+  "family": "record_redaction_known_fields",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "脱敏交付流程：读取 source.json，只保留 name_code 和 department；email、phone及任何其他字段全部丢弃，输出 public.json。先记流程。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "代号允许公开，联系方式仅存在源文件中，不应复制到交付文件。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按已学脱敏流程处理 source.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "source.json": "{\"name_code\": \"P4\", \"department\": \"test\", \"email\": \"fiction@example.invalid\", \"phone\": \"000-TEST\", \"note\": \"internal\"}"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

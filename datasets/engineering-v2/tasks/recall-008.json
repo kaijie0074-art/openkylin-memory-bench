@@ -1,0 +1,29 @@
+{
+  "id": "recall-008",
+  "ability": "recall",
+  "family": "cross_session_study_manuscript_archive_join",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "请记住研究项目的稿件关系：覆膜试验对应稿件 M17；薄壁试验对应稿件 M42。稿件编号不是档案索引号。最终文献卡写 citation.json，且只含 study、manuscript_id、title、record_id 四个字符串字段，分别使用项目原名、对应稿件编号、稿件登记题名和档案索引号。现在只保存项目与稿件的关系，先不交付，稍后会给稿件登记信息。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "补充稿件登记表：M17 的题名为“湿热耐久记录”，档案索引号 ARCH-306；M42 的题名为“覆膜工艺综述”，档案索引号 ARCH-884。题名不带引号；题名中出现的词不代表项目归属，须沿此前记录的项目到稿件关系查询。先保存登记信息，不生成文献卡。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为覆膜试验生成完整的归档文献卡。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

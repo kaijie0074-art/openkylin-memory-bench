@@ -1,0 +1,29 @@
+{
+  "id": "update-007",
+  "ability": "update",
+  "family": "deprecated_tag_mapping",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "旧分类映射：未处理标 todo，处理中标 doing，已完成标 done。导出 mapping.json 为状态到标签的对象。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "规范更新：仅“处理中”改为 in_progress；todo 和 done 不变，doing 停用。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成当前三个状态的完整标签映射。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

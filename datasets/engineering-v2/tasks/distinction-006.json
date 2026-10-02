@@ -1,0 +1,29 @@
+{
+  "id": "distinction-006",
+  "ability": "distinction",
+  "family": "metric_same_name_different_units",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "监控中同叫 latency 的两个指标：camera.latency 单位 ms，robot.latency 单位 s。metric.json 含 namespace、name、unit。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "展示层暂时省略命名空间，但原始指标定义仍不同。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成 robot 命名空间下 latency 的指标定义。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

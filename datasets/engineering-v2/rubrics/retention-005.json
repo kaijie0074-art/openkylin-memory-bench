@@ -1,0 +1,13 @@
+{
+  "task_id": "retention-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "script.txt",
+      "expected": "【开头】\n今天只演示传感器校准。\n\n【中段】\n先测量，再复测；不要省略复测。\n\n【结尾】\n请保留这次测量的原始记录。",
+      "description": "将跨会话乱序提供的三段原文按开头、中段、结尾排列，保留全部字词、标点与明确规定的分隔结构",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "task_id": "boundary-002",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "address.json",
+      "expected": {
+        "customer": "C31",
+        "address": null,
+        "status": "needs_information"
+      },
+      "description": "交付文件 address.json 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "explanation",
+      "kind": "semantic",
+      "description": "最终回复明确说明客户地址尚未提供，需要补充；不把工作室位置当客户地址。",
+      "expected": "最终回复明确说明客户地址尚未提供，需要补充；不把工作室位置当客户地址。",
+      "critical": false
+    }
+  ]
+}

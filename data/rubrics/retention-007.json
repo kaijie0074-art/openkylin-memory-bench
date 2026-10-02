@@ -1,0 +1,13 @@
+{
+  "task_id": "retention-007",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "minutes.txt",
+      "expected": "• 检查传感器\n• 备份日志",
+      "description": "交付文件 minutes.txt 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

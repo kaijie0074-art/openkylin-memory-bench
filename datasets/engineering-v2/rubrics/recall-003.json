@@ -1,0 +1,16 @@
+{
+  "task_id": "recall-003",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "material.json",
+      "expected": {
+        "material": "TPU",
+        "storage": "低湿密封盒"
+      },
+      "description": "交付文件 material.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

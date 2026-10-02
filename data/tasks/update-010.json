@@ -1,0 +1,34 @@
+{
+  "id": "update-010",
+  "ability": "update",
+  "family": "period_mislabeled_as_frequency_correction",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "传感器原始记录写着采样率为 20 Hz、启用状态为 true。最终配置保存 sensor.json，只含 sampling_rate、unit、enabled；sampling_rate 使用整数，unit 固定为 Hz，enabled 使用布尔值。本轮只记录，不生成配置。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "正式纠错：原始记录把采样周期误当成了采样频率。经批准的实际测量是周期 20 ms，并不是频率 20 Hz；旧频率记录作废。输出仍用 Hz 表示频率，换算规则是 sampling_rate = 1000 / 周期毫秒数，本例结果为整数。启用状态和输出字段不变。先记住纠错依据。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "另有提高速度的提案，建议把周期改成 10 ms，但尚未批准，也没有形成实际配置变更。",
+      "final": false
+    },
+    {
+      "id": "s4",
+      "prompt": "请生成当前已经批准的传感器配置。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

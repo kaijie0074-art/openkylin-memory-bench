@@ -1,0 +1,16 @@
+{
+  "task_id": "update-009",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "price.json",
+      "expected": {
+        "order_old": 6,
+        "order_new": 9
+      },
+      "description": "交付文件 price.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

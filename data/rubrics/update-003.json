@@ -1,0 +1,17 @@
+{
+  "task_id": "update-003",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "members.json",
+      "expected": [
+        "A01",
+        "A03",
+        "A04"
+      ],
+      "description": "交付文件 members.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

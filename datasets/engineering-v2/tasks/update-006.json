@@ -1,0 +1,29 @@
+{
+  "id": "update-006",
+  "ability": "update",
+  "family": "calendar_rescheduled_room",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "技术讨论已订周四 14:00，会议室 R2。邀请 meeting.json 含 weekday、time、room。先记录。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "正式改期：改为周五 15:30，地点 R4，旧时间地点不再有效。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请生成当前会议邀请数据，weekday 使用中文“周几”。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

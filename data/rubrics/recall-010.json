@@ -1,0 +1,18 @@
+{
+  "task_id": "recall-010",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "threshold.json",
+      "expected": {
+        "metric": "noise",
+        "comparison": "max",
+        "value": 45,
+        "unit": "dB"
+      },
+      "description": "交付文件 threshold.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

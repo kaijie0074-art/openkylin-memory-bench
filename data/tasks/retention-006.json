@@ -1,0 +1,29 @@
+{
+  "id": "retention-006",
+  "ability": "retention",
+  "family": "inventory_unit_label",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "库存数量的交付格式为 stock.json，字段 quantity 是整数，unit 固定 box；我们所有本委托数量均以箱计数，不换算成单件。先记录。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "货架标签换成蓝色，不影响计数单位。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "按库存交付约定记录本次入库 8。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

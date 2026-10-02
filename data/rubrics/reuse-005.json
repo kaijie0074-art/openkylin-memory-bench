@@ -1,0 +1,16 @@
+{
+  "task_id": "reuse-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "totals.json",
+      "expected": {
+        "X": 3,
+        "Y": 4
+      },
+      "description": "交付文件 totals.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

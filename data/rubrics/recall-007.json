@@ -1,0 +1,13 @@
+{
+  "task_id": "recall-007",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "command.txt",
+      "expected": "deployctl queue restore",
+      "description": "交付文件 command.txt 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

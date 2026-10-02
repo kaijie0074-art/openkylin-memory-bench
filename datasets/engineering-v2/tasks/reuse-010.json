@@ -1,0 +1,31 @@
+{
+  "id": "reuse-010",
+  "ability": "reuse",
+  "family": "dependency_release_gate",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "发布判断流程：checks.json 中所有检查 status 均为 pass 才允许 ready=true；任一 fail 或 pending 都为 false。输出 release.json，另列 blockers 为所有非pass检查的id，保持顺序。先记流程。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "pending 表示尚未证实通过，不能当成功。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请使用此前发布判断流程处理 checks.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "checks.json": "[{\"id\": \"unit\", \"status\": \"pass\"}, {\"id\": \"lint\", \"status\": \"pending\"}, {\"id\": \"security\", \"status\": \"fail\"}]"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

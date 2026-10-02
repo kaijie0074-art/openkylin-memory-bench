@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "full_file_hashes_verified": 173,
+  "formal_evidence_count": 108,
+  "formal_score_count": 324,
+  "sample_unique_real_runs": 4,
+  "sample_ABC_scores": 12,
+  "local_report_evidence_links_verified": 112,
+  "source_zip_crc": "passed",
+  "zip_crc": "passed",
+  "safe_tar_members": 14165,
+  "frozen_protocol_sha256_verified": true,
+  "code_data_scoring_protocol_unchanged": true,
+  "known_upstream_credential_matches": 0,
+  "pdf_pages": 13,
+  "pdf_visual_review": "all 13 rendered pages inspected; update after 592 guest tests reviewed",
+  "archives": [
+    {
+      "path": "deliverables/openKylin-Memory-Bench-评审材料-20261002.zip",
+      "bytes": 10414848,
+      "sha256": "02e42becd7ef5868ab6b3748518064da6216bf9f0f32c3321f34f6ee2b6acd1e",
+      "members": 50
+    },
+    {
+      "path": "deliverables/openKylin-Memory-Bench-完整交付-20261002.zip",
+      "bytes": 320279583,
+      "sha256": "5c6f69a7ef4575af3c6fc8a4d174b658093dcd0f09d71fac7b641459383426ef",
+      "members": 175
+    }
+  ],
+  "public_repository_url": null,
+  "public_video_url": null,
+  "submission_complete": false
+}

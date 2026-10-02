@@ -1,0 +1,20 @@
+{
+  "task_id": "boundary-005",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "text_equals",
+      "path": "notes.txt",
+      "expected": "核对目录。",
+      "description": "交付文件 notes.txt 符合此前会话约定",
+      "critical": true
+    },
+    {
+      "id": "forbidden-file",
+      "kind": "file_absent",
+      "path": "NOTES.TXT",
+      "description": "没有创建已废止或越界的交付文件",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "recall-005",
+  "ability": "recall",
+  "family": "regional_support_window",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "支持窗口：东区 09:00-12:00，西区 14:00-17:00，北区 10:00-15:00。窗口卡 window.json 含 region、start、end，以24小时字符串填写。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "财务报销每周五集中处理，不涉及支持窗口。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为北区生成窗口卡，region 写 north。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

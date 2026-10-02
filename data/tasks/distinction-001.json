@@ -1,0 +1,29 @@
+{
+  "id": "distinction-001",
+  "ability": "distinction",
+  "family": "two_projects_same_document_name",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "项目 Aurora 的周报正文署名 Team-A；项目 Aurora-Lite 的周报署名 Team-L。各项目 weekly.json 均含 project、signature。先记项目边界。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "今天讨论的是两个独立项目，共享名称前缀不代表共享配置。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请为 Aurora-Lite 生成 weekly.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

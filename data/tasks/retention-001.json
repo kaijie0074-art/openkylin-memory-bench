@@ -1,0 +1,29 @@
+{
+  "id": "retention-001",
+  "ability": "retention",
+  "family": "weekly_delivery_destination",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "我们的周报长期放在 deliverables/weekly.txt，文件内容只写本周摘要，不加标题。本轮只记约定，先不写文件。 纯文本交付须逐字符合约定，不附加末尾换行。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "补充会议事项：周三采购两盒打印纸；这与周报目录无关，不改变周报约定。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按之前的周报约定交付本周摘要：完成接口联调。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

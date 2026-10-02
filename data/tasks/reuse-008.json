@@ -1,0 +1,31 @@
+{
+  "id": "reuse-008",
+  "ability": "reuse",
+  "family": "paired_sensor_outlier_rule",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "传感器核对流程：每对读数绝对差大于2则标 review，否则 ok；输出检查.csv，两列 id,result，保持输入顺序。示例差2仍为ok。先记规则。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "之后每批阈值相同，不因某批异常数量调整。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按已学流程核对 readings.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "readings.json": "[{\"id\": \"p1\", \"a\": 10, \"b\": 12}, {\"id\": \"p2\", \"a\": 4, \"b\": 8}, {\"id\": \"p3\", \"a\": 9, \"b\": 9}]"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

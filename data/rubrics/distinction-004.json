@@ -1,0 +1,17 @@
+{
+  "task_id": "distinction-004",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "spec.json",
+      "expected": {
+        "model": "P10",
+        "revision": 2,
+        "connector": "USB-C"
+      },
+      "description": "交付文件 spec.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

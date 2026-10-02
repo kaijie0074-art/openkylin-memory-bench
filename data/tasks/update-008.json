@@ -1,0 +1,34 @@
+{
+  "id": "update-008",
+  "ability": "update",
+  "family": "ordered_multiple_corrections",
+  "split": "holdout",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "装箱标准初版每箱 12 件。packing.json 格式为 units_per_box 整数。先记。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "第一次修订曾改成每箱 10 件。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "最终签发版本是每箱 8 件，替代前两版；没有后续变更。",
+      "final": false
+    },
+    {
+      "id": "s4",
+      "prompt": "请输出当前签发的装箱标准。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

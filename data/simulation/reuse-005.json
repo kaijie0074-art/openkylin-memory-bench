@@ -1,0 +1,10 @@
+{
+  "task_id": "reuse-005",
+  "provenance": "simulated",
+  "notice": "手工编写的模拟预期文件状态，仅供软件测试；不是任何真实智能体或openKylin的运行结果，不得传入真实智能体。",
+  "files_after": {
+    "movements.csv": "sku,delta\nX,5\nY,4\nX,-2\n",
+    "totals.json": "{\n  \"X\": 3,\n  \"Y\": 4\n}\n"
+  },
+  "final_response": "已按约定生成交付文件。"
+}

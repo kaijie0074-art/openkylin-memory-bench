@@ -1,0 +1,34 @@
+{
+  "id": "retention-005",
+  "ability": "retention",
+  "family": "out_of_order_script_sections_preserved",
+  "split": "selection",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "请记住演示稿交付约定：最终写入 script.txt，严格依次使用【开头】、【中段】、【结尾】三个小节。每个小节先写标题，换一行后写对应原文；相邻小节之间空一行。不要加总标题、说明或文件末尾换行，原文的字词和标点都要保留，不改写。三个小节素材会分次给出，收到素材时先保存记忆，等最终委托才生成完整稿。本次先给【结尾】原文（不含引号）：“请保留这次测量的原始记录。”",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "补充【开头】原文（不含引号）：“今天只演示传感器校准。”请记住对应位置，仍先不生成完整稿。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "补充【中段】原文（不含引号）：“先测量，再复测；不要省略复测。”素材已齐，先保存，等待下一次最终委托。",
+      "final": false
+    },
+    {
+      "id": "s4",
+      "prompt": "请使用此前分次提供的全部素材，按演示稿约定交付完整稿。",
+      "final": true
+    }
+  ],
+  "initial_files": {},
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

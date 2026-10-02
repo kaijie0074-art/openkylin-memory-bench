@@ -1,0 +1,16 @@
+{
+  "task_id": "distinction-008",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "limit.json",
+      "expected": {
+        "role": "采购负责人",
+        "max_amount": 2000
+      },
+      "description": "交付文件 limit.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "reuse-003",
+  "ability": "reuse",
+  "family": "priority_sort_stable_ties",
+  "split": "dev",
+  "sessions": [
+    {
+      "id": "s1",
+      "prompt": "待办排序流程：priority 数值越小越优先；相同优先级保持输入顺序。输出 ordered.json 为 id 字符串数组，输入读 tasks.json。先记流程。",
+      "final": false
+    },
+    {
+      "id": "s2",
+      "prompt": "不要使用字母排序打破同优先级的原顺序。",
+      "final": false
+    },
+    {
+      "id": "s3",
+      "prompt": "请按已学流程整理 tasks.json。",
+      "final": true
+    }
+  ],
+  "initial_files": {
+    "tasks.json": "[{\"id\": \"A\", \"priority\": 2}, {\"id\": \"C\", \"priority\": 1}, {\"id\": \"B\", \"priority\": 1}]"
+  },
+  "budget": {
+    "timeout_seconds": 600,
+    "max_tool_actions": 20
+  },
+  "memory_policy": "native persistence across fresh sessions; fresh subject per trial; no rubric or complete history in final prompt"
+}

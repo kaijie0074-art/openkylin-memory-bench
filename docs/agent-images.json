@@ -1,0 +1,76 @@
+{
+  "captured_at": "2026-09-28T03:19:36.705249+00:00",
+  "docker_context": "colima-kmb",
+  "verification_scope": "Observed image identities and CLI/native-configuration probes only; no model calls in these probes. Real runs retain their own image digest, including earlier images.",
+  "images": [
+    {
+      "agent": "openclaw",
+      "tag": "kmb-openclaw:2026.9.6-terminal-v2",
+      "Id": "sha256:648bf328d5b26a0bae290b11c8171d57fd89e9a5e7a6afc116ec74e6227e7d46",
+      "Architecture": "arm64",
+      "Os": "linux",
+      "guest_os_id": "debian",
+      "cli_version": "OpenClaw 2026.9.6 (eb377ac)",
+      "source_pin": {
+        "repository": "https://github.com/openclaw/openclaw",
+        "npm_package": "openclaw",
+        "npm_version": "2026.9.6",
+        "cli_reported_commit": "eb377ac"
+      },
+      "probe_status": "probe_passed",
+      "configuration_valid": true,
+      "probe_record": "reports/openclaw-terminal-v2-cli-probe.json",
+      "model_calls": 0,
+      "not_openkylin": true,
+      "prior_image": {
+        "tag": "kmb-openclaw:2026.9.6",
+        "Id": "sha256:4bde99f1316c8a0a4b46948b512693dcf386e1e23de4560dd0f35b864a3649e5"
+      },
+      "worker_patch": "native OpenClaw terminal envelope required; abort/error fails closed; length/budget tracked separately; unknown stop remains execution_unknown",
+      "worker_sha256": "97ca862e5c2aefcaf5efba3d9c5d9bf73535e7cda7d3e0b9d7f43223e204e3a3"
+    },
+    {
+      "agent": "hermes",
+      "tag": "kmb-hermes:2ffa4977baf9-settle-v2",
+      "Id": "sha256:f11b22f1aff4bea5266da7097e05d9ea937a92e49218e52514c502aad606497e",
+      "Architecture": "arm64",
+      "Os": "linux",
+      "guest_os_id": "debian",
+      "cli_version": "Hermes Agent vunknown (2026.9.24)\nInstall directory: /opt/hermes\nInstall method: git\nPython: 3.14.2\nOpenAI SDK: 2.24.0",
+      "source_pin": {
+        "repository": "https://github.com/NousResearch/hermes-agent",
+        "git_commit": "2ffa4977baf9874c498453a09447dc399b0fd215",
+        "installation": "upstream_supported_editable"
+      },
+      "probe_status": "probe_passed",
+      "configuration_valid": true,
+      "probe_record": "reports/hermes-settle-v2-cli-probe.json",
+      "model_calls": 0,
+      "not_openkylin": true,
+      "prior_image": {
+        "tag": "kmb-hermes:2ffa4977baf9-settle-v1",
+        "Id": "sha256:42c10447845345faf44e05f3688e7c3cddc69c7e154146d3567f0c7f5e690647",
+        "worker_sha256": "69425a49ce8f00aac128f51adfdbe0dc355f2a8e7aaf402c122d96628065240e",
+        "prior_image": {
+          "tag": "kmb-hermes:2ffa4977baf9",
+          "Id": "sha256:0bca23d76eae7075cdc6e556b62c994e1a013b4df645b7fa037dfb0275b0dcc0"
+        }
+      },
+      "lifecycle_fixture": "reports/hermes-settle-local-fixture.json",
+      "worker_patch": "Whole worker source aligned with current OpenClaw terminal-v2 snapshot; Hermes execution branch unchanged from settle-v1; title/cleanup drain bounded and background consolidation unverified.",
+      "worker_sha256": "97ca862e5c2aefcaf5efba3d9c5d9bf73535e7cda7d3e0b9d7f43223e204e3a3",
+      "configuration_validation_evidence": {
+        "record": "reports/hermes-settle-v2-cli-probe.json",
+        "process_returncode": 0,
+        "native_valid": true,
+        "main_route_matches": true,
+        "fallback_disabled": true,
+        "unmatched_auxiliary": []
+      },
+      "real_run_scope": "settle-v2 has CLI/native-configuration probe only, zero model calls in this probe; ongoing real-pilot-v1 retains settle-v1."
+    }
+  ],
+  "model_calls": 0,
+  "not_openkylin": true,
+  "updated_at": "2026-09-28T04:05:23.113079+00:00"
+}

@@ -1,0 +1,17 @@
+{
+  "task_id": "update-006",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "meeting.json",
+      "expected": {
+        "weekday": "周五",
+        "time": "15:30",
+        "room": "R4"
+      },
+      "description": "交付文件 meeting.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

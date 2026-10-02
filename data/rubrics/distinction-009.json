@@ -1,0 +1,16 @@
+{
+  "task_id": "distinction-009",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "contract.json",
+      "expected": {
+        "edition": "Signed-7",
+        "delivery_date": "2026-10-12"
+      },
+      "description": "交付文件 contract.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

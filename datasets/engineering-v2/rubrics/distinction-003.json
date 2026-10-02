@@ -1,0 +1,17 @@
+{
+  "task_id": "distinction-003",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "json_equals",
+      "path": "person.json",
+      "expected": {
+        "name": "陈宁",
+        "department": "测试组",
+        "employee_id": "T42"
+      },
+      "description": "交付文件 person.json 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}

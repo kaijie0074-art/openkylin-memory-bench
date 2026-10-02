@@ -1,0 +1,30 @@
+{
+  "task_id": "reuse-008",
+  "criteria": [
+    {
+      "id": "result-1",
+      "kind": "csv_equals",
+      "path": "检查.csv",
+      "expected": [
+        [
+          "id",
+          "result"
+        ],
+        [
+          "p1",
+          "ok"
+        ],
+        [
+          "p2",
+          "review"
+        ],
+        [
+          "p3",
+          "ok"
+        ]
+      ],
+      "description": "交付文件 检查.csv 符合此前会话约定",
+      "critical": true
+    }
+  ]
+}
