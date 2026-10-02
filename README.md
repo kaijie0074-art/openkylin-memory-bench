@@ -32,7 +32,7 @@ uv run --frozen --no-sync kmb demo --output reports/my-demo
 uv run --frozen --no-sync pytest
 ```
 
-`reports/my-demo` 必须不存在。演示明确标记为模拟，只验证工具链，不进入真实成绩。`doctor` 不安装组件、不启动 Docker、不调用模型。592 项软件测试已在 Mac 和 openKylin 固定运行环境通过；GitHub CI 在源码推送后运行；当前状态见仓库 Actions，软件检查与平台验证分别记录。
+`reports/my-demo` 必须不存在。演示明确标记为模拟，只验证工具链，不进入真实成绩。`doctor` 不安装组件、不启动 Docker、不调用模型。592 项软件测试已在 Mac 和 openKylin 固定运行环境通过；[GitHub CI 已通过](https://github.com/kaijie0074-art/openkylin-memory-bench/actions/runs/37003061152)：592 项测试、Ruff、题库校验和离线模拟流程。软件检查与 openKylin 平台验证分别记录。
 
 ## 真实运行与离线评分
 

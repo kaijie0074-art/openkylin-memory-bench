@@ -22,7 +22,7 @@
 
 可信 CLI、采集、评分、报告在 openKylin 上运行；OpenClaw 与 Hermes 在该客体管理的固定 Debian ARM64 Docker 用户空间运行。Mac 是虚拟机宿主。模型请求与回执均为 gpt-5.5。未验证 x86 或 AgentOS SDK 原生集成。
 
-Mac 及客体 fresh source 目录各通过 592 项测试、Ruff 和编译；客体源码构建通过。fresh source 复用了已有固定运行环境；新依赖环境全离线安装有缓存缺失，不能声称通过。GitHub CI 已准备，尚未远程执行。
+Mac 及客体 fresh source 目录各通过 592 项测试、Ruff 和编译；客体源码构建通过。fresh source 复用了已有固定运行环境；新依赖环境全离线安装有缓存缺失，不能声称通过。[GitHub CI 已通过](https://github.com/kaijie0074-art/openkylin-memory-bench/actions/runs/37003061152)：Ubuntu 24.04 / Python 3.12 的 592 项测试、Ruff、数据校验和离线模拟流程；它不替代 openKylin 平台验证。
 
 ARM64 .deb `0.1.0-3` 断网安装、普通用户模拟批处理、卸载重装及已冻结证据离线重评分/报告核对通过；安装包 SHA-256 为 `64cc1adb2e0238c9faf46812a63c006bfcb5076fd7703b34aae5e256b5f1fdc1`。它携带原始题库；正式复现须另选 `datasets/engineering-v2`。它不携带模型账户、智能体镜像或虚拟机磁盘。
 
