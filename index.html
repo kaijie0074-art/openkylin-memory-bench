@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="观看 openKylin Memory Bench 的真实桌面演示，下载项目方案、评审材料和安装包。">
+  <title>openKylin Memory Bench：智能体长期记忆自动化评测工具</title>
+  <style>
+    :root { --ink:#142533; --muted:#536574; --paper:#f6f8fa; --line:#d9e1e7; --brand:#0658a3; --light:#eaf3fb; --focus:#be4c00; }
+    * { box-sizing:border-box; }
+    html { scroll-padding-top:1.5rem; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; font-size:1.0625rem; line-height:1.65; }
+    a { color:var(--brand); text-underline-offset:.22em; text-decoration-thickness:1px; }
+    a:hover { text-decoration-thickness:2px; }
+    a:focus-visible,button:focus-visible,summary:focus-visible,video:focus-visible { outline:3px solid var(--focus); outline-offset:4px; }
+    button { font:inherit; }
+    .skip { position:absolute; top:0; left:1rem; transform:translateY(-150%); background:#fff; padding:.7rem 1rem; z-index:5; }
+    .skip:focus { transform:translateY(.5rem); }
+    .wrap { width:min(100% - 3rem, 1120px); margin-inline:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1.6rem 0 1.4rem; border-bottom:1px solid var(--line); }
+    .wordmark { display:flex; align-items:center; gap:.75rem; font-weight:700; font-size:1.125rem; letter-spacing:-.02em; }
+    .mark { width:31px; height:31px; display:grid; grid-template-columns:repeat(3,1fr); gap:3px; padding:2px; flex:none; }
+    .mark span { background:var(--brand); border-radius:2px; }
+    .mark span:nth-child(2),.mark span:nth-child(6) { opacity:.5; }
+    .mark span:nth-child(3) { opacity:.22; }
+    header a { font-size:.9375rem; white-space:nowrap; }
+    main { padding:2.5rem 0 3rem; }
+    .intro { margin-bottom:1.65rem; max-width:940px; }
+    .eyebrow { margin:0 0 .6rem; color:var(--brand); font-size:.9375rem; font-weight:650; }
+    h1 { margin:0 0 .85rem; font-size:clamp(2rem,3.6vw,2.75rem); line-height:1.28; font-weight:730; letter-spacing:-.035em; }
+    h1 span { display:block; font-size:.75em; margin-top:.28rem; letter-spacing:0; }
+    .lead { margin:0; color:var(--muted); font-size:1.125rem; }
+    .metadata { display:flex; flex-wrap:wrap; gap:.35rem 1.5rem; margin:1rem 0 0; color:var(--muted); font-size:.9375rem; }
+    .metadata span { display:inline-flex; align-items:center; gap:.45rem; }
+    .dot { width:7px; height:7px; background:var(--brand); border-radius:50%; }
+    figure { margin:0; }
+    .player { background:#111a22; border:1px solid #172838; border-radius:12px; overflow:hidden; box-shadow:0 10px 32px #18345112; }
+    video { display:block; width:100%; aspect-ratio:2584/1810; max-height:70vh; object-fit:contain; background:#111a22; }
+    figcaption { display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; padding:1rem .1rem 0; font-size:.9375rem; color:var(--muted); }
+    figcaption p { margin:0; max-width:720px; }
+    figcaption a { white-space:nowrap; }
+    .error { margin:.9rem 0 0; padding:.8rem 1rem; border-left:3px solid var(--focus); background:#fff5e9; font-size:1rem; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    section { margin-top:2.15rem; }
+    .section-heading { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; margin-bottom:.9rem; }
+    h2 { font-size:1.375rem; line-height:1.4; margin:0; font-weight:700; }
+    .section-heading p { font-size:.9375rem; color:var(--muted); margin:0; }
+    .chapters { display:grid; grid-template-columns:repeat(4,1fr); gap:.6rem; }
+    .chapter { display:flex; align-items:flex-start; gap:.65rem; border:1px solid var(--line); background:#fff; padding:.85rem; border-radius:7px; min-height:85px; color:var(--ink); text-align:left; cursor:pointer; line-height:1.45; }
+    .chapter:hover { background:var(--light); border-color:#88b6df; }
+    .chapter time { font-size:.875rem; color:var(--brand); font-variant-numeric:tabular-nums; font-weight:650; padding-top:.1rem; }
+    .chapter span { font-size:1rem; }
+    .evidence-note { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:1.15rem 0; }
+    .evidence-note summary { cursor:pointer; font-weight:650; font-size:1.125rem; }
+    .evidence-note p { margin:.75rem 0 0; color:var(--muted); max-width:940px; }
+    .evidence-note strong { color:var(--ink); }
+    .downloads { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .download { display:flex; flex-direction:column; gap:.55rem; text-decoration:none; border-top:3px solid var(--brand); border-bottom:1px solid var(--line); background:#fff; padding:1.1rem 1.15rem; }
+    .download:hover { background:var(--light); }
+    .download-title { color:var(--brand); font-size:1.125rem; font-weight:650; }
+    .download-description { color:var(--muted); font-size:.9375rem; line-height:1.6; }
+    .other-links { display:flex; flex-wrap:wrap; gap:.6rem 1.5rem; margin:1rem 0 0; font-size:1rem; }
+    footer { border-top:1px solid var(--line); padding:1.2rem 0 1.65rem; color:var(--muted); font-size:.9375rem; }
+    footer p { margin:0; }
+    @media (max-width:800px) {
+      .chapters { grid-template-columns:repeat(2,1fr); }
+      .downloads { grid-template-columns:1fr; gap:.7rem; }
+      .download { padding:1rem; }
+    }
+    @media (max-width:520px) {
+      body { font-size:1rem; }
+      .wrap { width:calc(100% - 2rem); }
+      header { padding:1.1rem 0; align-items:flex-start; }
+      .wordmark { font-size:1rem; gap:.4rem; }
+      .mark { width:25px; height:25px; }
+      header a { font-size:.875rem; padding-top:.1rem; }
+      main { padding-top:1.75rem; }
+      .lead { font-size:1.0625rem; }
+      .metadata { gap:.35rem 1rem; }
+      .player { border-radius:8px; }
+      figcaption { display:block; }
+      figcaption a { display:inline-block; margin-top:.6rem; }
+      .section-heading { display:block; }
+      .section-heading p { margin-top:.3rem; }
+      .chapter { padding:.75rem .6rem; gap:.5rem; min-height:95px; }
+      .chapter span { font-size:1rem; }
+      .chapter time { font-size:.8125rem; }
+    }
+    @media (forced-colors:active) { .chapter,.download,.player { border:1px solid ButtonText; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到视频与材料</a>
+  <div class="wrap">
+    <header>
+      <div class="wordmark"><span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>openKylin Memory Bench</div>
+      <a href="https://github.com/kaijie0074-art/openkylin-memory-bench">代码仓库 ↗</a>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <p class="eyebrow">项目演示与参赛材料</p>
+        <h1>openKylin Memory Bench<span>智能体长期记忆自动化评测工具</span></h1>
+        <p class="lead">让 OpenClaw 与 Hermes 经历多次会话，以实际文件验收记忆表现，再用 A / B / C 三种方法评分。</p>
+        <p class="metadata"><span><i class="dot" aria-hidden="true"></i>真实 openKylin 桌面录屏</span><span>3 分 27 秒</span><span>有讲解字幕 · 无音轨</span></p>
+      </div>
+
+      <figure>
+        <div class="player">
+          <video id="demo-video" controls preload="metadata" playsinline aria-label="openKylin Memory Bench 真实桌面演示，有讲解字幕，无音轨" aria-describedby="video-caption">
+            <source src="./openkylin-memory-bench-captioned-demo.mp4" type="video/mp4">
+            你的浏览器不支持内嵌视频。<a href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-captioned-demo.mp4">请下载 MP4 观看。</a>
+          </video>
+        </div>
+        <figcaption id="video-caption">
+          <p>前段展示两次开发演示及文件验收失败；03:10 起展示另一批独立完成的 108 次正式实验报告。节选已删去等待，末段慢放，完整原片保留在完整材料中。</p>
+          <a href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-captioned-demo.mp4">下载视频备用 ↗</a>
+        </figcaption>
+        <p id="video-error" class="error" hidden>视频暂时无法加载。请使用上方“下载视频备用”链接，或稍后重试。</p>
+      </figure>
+
+      <section aria-labelledby="chapters-title">
+        <div class="section-heading"><h2 id="chapters-title">按章节查看</h2><p>点击跳转；播放由你控制。</p></div>
+        <div class="chapters">
+          <button class="chapter" type="button" data-time="0" aria-label="跳转到 00:00，环境与两款智能体"><time>00:00</time><span>环境与两款智能体</span></button>
+          <button class="chapter" type="button" data-time="10" aria-label="跳转到 00:10，三会话路径更新任务"><time>00:10</time><span>三会话路径更新任务</span></button>
+          <button class="chapter" type="button" data-time="20" aria-label="跳转到 00:20，真实运行与等待节选"><time>00:20</time><span>真实运行与等待节选</span></button>
+          <button class="chapter" type="button" data-time="32" aria-label="跳转到 00:32，运行完成，文件验收失败"><time>00:32</time><span>运行完成，文件验收失败</span></button>
+          <button class="chapter" type="button" data-time="62" aria-label="跳转到 01:02，逐项判据与引用"><time>01:02</time><span>逐项判据与引用</span></button>
+          <button class="chapter" type="button" data-time="102" aria-label="跳转到 01:42，文件缺失与记忆边界"><time>01:42</time><span>文件缺失与记忆边界</span></button>
+          <button class="chapter" type="button" data-time="138" aria-label="跳转到 02:18，三种评分与研究局限"><time>02:18</time><span>三种评分与研究局限</span></button>
+          <button class="chapter" type="button" data-time="190" aria-label="跳转到 03:10，独立正式实验六维报告"><time>03:10</time><span>独立正式实验六维报告</span></button>
+        </div>
+        <p id="seek-status" class="sr-only" role="status" aria-live="polite"></p>
+        <noscript><p>章节跳转需要启用 JavaScript；你仍可使用视频播放器手动选择时间。</p></noscript>
+      </section>
+
+      <section aria-label="演示和结论的范围">
+        <details class="evidence-note">
+          <summary>如何读这段演示与正式报告</summary>
+          <p><strong>开发演示：</strong>任务要求在新会话中记住更新后的路径，生成 current/report.txt，并核对已废止的 old/report.txt 不存在。两款智能体都结束运行，但没有交付所需的新文件，三种评分均判失败。“运行完成”不等于“任务通过”。</p>
+          <p><strong>正式报告：</strong>18 道留出任务 × 两款智能体 × 三次重复，共 108 次真实运行、324 条评分。其中 107 次完成、1 次预算耗尽；客观任务通过数为 OpenClaw 31 / 54，Hermes 26 / 54。报告衡量任务产物表现，不能当作评分器的人工准确率。</p>
+          <p><strong>验证范围：</strong>工具与报告运行于 openKylin 3.0 ARM64 Live 环境，两款智能体运行于固定 Debian ARM64 容器。语义评分尚未经过独立人工验证，本轮没有宣布评分器赢家。完整材料保存原始证据和连续录屏，便于回查。</p>
+        </details>
+      </section>
+
+      <section aria-labelledby="materials-title">
+        <div class="section-heading"><h2 id="materials-title">项目材料</h2><p>公开附件，无需登录。</p></div>
+        <div class="downloads">
+          <a class="download" href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-introduction.pdf"><span class="download-title">作品介绍与技术方案 ↗</span><span class="download-description">PDF · 项目设计、实施方案、验证结果与限制。</span></a>
+          <a class="download" href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-review-materials.zip"><span class="download-title">精简评审材料 ↗</span><span class="download-description">约 11.7 MB · 方案、源码、演示视频、示例证据与正式结果摘要。</span></a>
+          <a class="download" href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-complete-delivery.zip"><span class="download-title">完整交付档案 ↗</span><span class="download-description">约 318.5 MB · 完整实验记录、报告、安装包和连续录屏。</span></a>
+        </div>
+        <p class="other-links">
+          <a href="https://github.com/kaijie0074-art/openkylin-memory-bench">代码与复现说明 ↗</a>
+          <a href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench_0.1.0-3_arm64.deb">ARM64 .deb 安装包 ↗</a>
+          <a href="https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3">全部附件与校验值 ↗</a>
+        </p>
+      </section>
+    </main>
+    <footer><p>openKylin Memory Bench · 工程验证 v3 · 原创合成任务与可追溯实验记录</p></footer>
+  </div>
+  <script>
+    (() => {
+      const video = document.getElementById('demo-video');
+      const status = document.getElementById('seek-status');
+      const error = document.getElementById('video-error');
+      let requestedTime = null;
+      let requestedLabel = '';
+      const seek = () => {
+        if (requestedTime === null || video.readyState < 1) return;
+        try {
+          video.currentTime = Math.min(requestedTime, Number.isFinite(video.duration) ? video.duration : requestedTime);
+          status.textContent = '已跳转到 ' + requestedLabel + '。请使用播放器控制播放。';
+          requestedTime = null;
+        } catch (_) {
+          status.textContent = '暂时无法跳转，请等待视频加载或使用备用下载链接。';
+        }
+      };
+      document.querySelectorAll('[data-time]').forEach((button) => {
+        button.addEventListener('click', () => {
+          requestedTime = Number(button.dataset.time);
+          requestedLabel = button.textContent.trim();
+          if (video.readyState < 1) {
+            status.textContent = '正在加载视频，请稍候。';
+            video.load();
+          } else {
+            seek();
+          }
+        });
+      });
+      video.addEventListener('loadedmetadata', seek);
+      const showError = () => { error.hidden = false; status.textContent = '视频加载失败，请使用备用下载链接。'; };
+      video.addEventListener('error', showError);
+      video.querySelector('source').addEventListener('error', showError);
+    })();
+  </script>
+</body>
+</html>
