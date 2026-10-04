@@ -72,5 +72,26 @@
   ],
   "model_calls": 0,
   "not_openkylin": true,
-  "updated_at": "2026-09-28T04:05:23.113079+00:00"
+  "updated_at": "2026-10-04T07:23:08.231632+00:00",
+  "historical_mac_probe_notice": "images and not_openkylin retain the dated Mac probe snapshot; active engineering v3 config digests are listed in current_openkylin_images. OCI manifest digests differ from Docker classic config digests.",
+  "current_openkylin_images": {
+    "checked_at": "2026-10-04",
+    "platform": "openKylin3.0 ARM64 fresh guest",
+    "protocol": "reports/engineering-v3-protocol-20261001.json",
+    "archive_filename": "agent-images-v2.tar.gz",
+    "archive_sha256": "8b433d6d0ec70946b12cb5e83d088c7b298fbe889c2040b6386fd033d12ec607",
+    "archive_bytes": 648569693,
+    "openclaw": {
+      "classic_config_digest": "sha256:678ce0c64001c05afd76afce2ce5816f12fbe01036c68ed316bd30ce5ca8742d",
+      "oci_manifest_digest": "sha256:648bf328d5b26a0bae290b11c8171d57fd89e9a5e7a6afc116ec74e6227e7d46",
+      "tag": "kmb-openclaw:2026.9.6-terminal-v2"
+    },
+    "hermes": {
+      "classic_config_digest": "sha256:1d0709138a34cde8dd0c305de53a20911c9a204a699df239a62730792eebe22d",
+      "oci_manifest_digest": "sha256:f11b22f1aff4bea5266da7097e05d9ea937a92e49218e52514c502aad606497e",
+      "tag": "kmb-hermes:2ffa4977baf9-settle-v2"
+    },
+    "fresh_import": "sha256 verified; docker load succeeded; both classic digests matched protocol; no rebuild",
+    "redistribution_notice": "Third-party components retain their own licenses; this archive is not wholly MIT/Apache. Targeted privacy review found no confirmed leakage; not an exhaustive secrets or redistribution certification. Public hosting is not asserted by this record."
+  }
 }

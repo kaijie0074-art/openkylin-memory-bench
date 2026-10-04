@@ -18,3 +18,4 @@ deliverables/*.zip
 deliverables/competition-*/
 output/
 *.egg-info/
+deliverables/ready-to-submit-*/

@@ -48,6 +48,7 @@ def release(tmp_path):
     (root / "src/kmb/cli.py").write_text("def main(): return 0\n")
     (root / "data/LICENSE").write_text("test data license\n")
     (root / "scripts/run-benchmark.py").write_text("# isolated fixture\n")
+    (root / "scripts/verify-frozen-rules.py").write_text("# offline verification fixture\n")
     (root / "LICENSE").write_text("test license\n")
     (root / "pyproject.toml").write_text('''[project]
 name = "openkylin-memory-bench"
@@ -146,6 +147,19 @@ def test_requirements_must_be_locked_hashed_names(release, replacement):
 def test_missing_project_requirement_not_silently_added(release):
     release.requirements.write_text(release.requirements.read_text().splitlines()[0] + "\n")
     with pytest.raises(deb.Rejected, match="closure_mismatch"):
+        deb.inspect_inputs(release)
+
+
+@pytest.mark.parametrize("kind", ["missing", "symlink"])
+def test_verifier_support_script_is_required_and_not_a_symlink(release, kind):
+    script = release.source_root / "scripts/verify-frozen-rules.py"
+    if kind == "missing":
+        script.unlink()
+    else:
+        target = release.source_root / "external-fixture.py"
+        script.rename(target)
+        script.symlink_to(target)
+    with pytest.raises(deb.Rejected, match="support_input_missing_or_symlink"):
         deb.inspect_inputs(release)
 
 
@@ -403,13 +417,22 @@ def test_mock_success_packages_only_locked_payload_without_installing(release, m
     assert result["installed"]["count"] == 2
     assert "python3 (<< 3.13)" in (stage / "DEBIAN/control").read_text()
     assert "Architecture: arm64" in (stage / "DEBIAN/control").read_text()
-    assert "Version: 0.1.0-3" in (stage / "DEBIAN/control").read_text()
+    assert "Version: 0.1.0-4" in (stage / "DEBIAN/control").read_text()
     packaged_lock = stage / deb.INSTALL / "lib/python3.12/uv.lock"
     assert packaged_lock.read_bytes() == (release.source_root / "uv.lock").read_bytes()
     assert deb.digest(packaged_lock) == plan["inputs"]["uv.lock"]
-    assert result["deb"]["filename"] == "openkylin-memory-bench_0.1.0-3_arm64.deb"
+    assert result["deb"]["filename"] == "openkylin-memory-bench_0.1.0-4_arm64.deb"
     assert "-I -m kmb.cli" in (stage / "usr/bin/kmb").read_text()
     assert "-I /usr/lib/openkylin-memory-bench/scripts/run-benchmark.py" in (stage / "usr/bin/kmb-batch").read_text()
+    assert "-I /usr/lib/openkylin-memory-bench/scripts/verify-frozen-rules.py" in (
+        stage / "usr/bin/kmb-verify-rules").read_text()
+    verifier = "scripts/verify-frozen-rules.py"
+    assert (stage / deb.SUPPORT / verifier).read_bytes() == (
+        release.source_root / verifier).read_bytes()
+    assert plan["inputs"][verifier] == deb.digest(stage / deb.SUPPORT / verifier)
+    manifest = json.loads((stage / "usr/share/doc" / deb.PACKAGE / "build-manifest.json").read_text())
+    assert manifest["version"] == "0.1.0" and manifest["revision"] == "4"
+    assert manifest["input_hashes"][verifier] == plan["inputs"][verifier]
     assert (stage / deb.SUPPORT / "data").readlink() == (
         Path("/") / deb.INSTALL / "lib/python3.12/site-packages/kmb/data")
     assert not (stage / "DEBIAN/postinst").exists()
@@ -417,6 +440,10 @@ def test_mock_success_packages_only_locked_payload_without_installing(release, m
     for flag in ["--offline", "--no-index", "--no-deps", "--no-editable", "--require-hashes"]:
         assert flag in install
     assert install[install.index("--link-mode") + 1] == "copy"
+    packaging = [c for c in calls if c[0] == "/usr/bin/dpkg-deb"]
+    assert packaging == [["/usr/bin/dpkg-deb", "--threads-max=1", "-Zgzip", "-z6",
+                          "--build", "--root-owner-group", str(stage),
+                          str(release.output / result["deb"]["filename"])]]
     assert not any(c[0] in {"apt", "apt-get", "docker"} or "-i" in c for c in calls)
 
 

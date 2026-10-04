@@ -85,7 +85,7 @@ terminal/file/memory/session_search 工具集；每次 invocation 创建新会�
 使用已验证的完整源码 commit 和 image digest 追溯安装身份。
 本机反代已完成模型调用及工具往返。`reports/real-local-proxy-smoke-v2` 中，两款智能体均完成
 update-001 的三次新会话，最终产物、目录清单与网关收尾通过，A/B/C 共六条评分通过。
-首次实验的故障证据和旧评分保留，见 反代接入记录（档案或本地工作区路径：`local-proxy-reconnection.md`）。
+首次实验的故障证据和旧评分保留，见 历史本机反代接入记录（未随公开源码或 R1 档案交付）。
 12题×两款智能体的 pilot 正在运行，尚无完整六维结论；随机哨兵隔离和 openKylin 实测仍待完成。
 
 镜像 tag 不是不可变身份，以实际 digest 为准。Hermes 已另建 `settle-v2` 并通过无模型

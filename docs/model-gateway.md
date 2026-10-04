@@ -53,4 +53,4 @@ URL 中的凭据、查询参数和片段。上游错误正文、请求头和异�
 
 网关测试使用 `httpx.MockTransport` 作为上游，仅在本机发 HTTP 请求。通过这些测试
 只说明受控协议、预算、证据和错误处理工作。另有两款智能体的单题真实 Mac/Debian
-smoke 记录，见 反代接入记录（档案或本地工作区路径：`local-proxy-reconnection.md`）；它不替代完整 pilot 或 openKylin 验收。
+smoke 记录，见 历史本机反代接入记录（未随公开源码或 R1 档案交付）；它不替代完整 pilot 或 openKylin 验收。

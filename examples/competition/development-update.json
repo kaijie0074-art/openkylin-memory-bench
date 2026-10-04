@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "agent": "both",
+  "task": "update-001",
+  "split": "dev",
+  "repeat": 1,
+  "variant": "all",
+  "dataset": "../../datasets/engineering-v2",
+  "images": {
+    "openclaw": "sha256:678ce0c64001c05afd76afce2ce5816f12fbe01036c68ed316bd30ce5ca8742d",
+    "hermes": "sha256:1d0709138a34cde8dd0c305de53a20911c9a204a699df239a62730792eebe22d"
+  }
+}

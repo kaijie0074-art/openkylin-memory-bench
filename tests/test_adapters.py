@@ -194,7 +194,8 @@ def test_process_output_is_bounded_and_never_claimed_complete(monkeypatch, strea
 def test_process_timeout_kills_its_group_and_keeps_partial_output():
     import sys
     code = "import time; print('fixture-started',flush=True); time.sleep(10)"
-    observed = asyncio.run(adapters._process([sys.executable, "-c", code], timeout=0.1))
+    # Allow the Python child to start under VM/video host load before testing its timeout.
+    observed = asyncio.run(adapters._process([sys.executable, "-c", code], timeout=1.0))
     assert observed["timed_out"] and not observed["output_complete"]
     assert "fixture-started" in observed["stdout"]
 

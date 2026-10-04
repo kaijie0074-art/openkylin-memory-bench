@@ -27,7 +27,11 @@ from urllib.parse import unquote, urlsplit
 
 PROJECT = Path(__file__).resolve().parents[1]
 PACKAGE = "openkylin-memory-bench"
-PACKAGE_REVISION = "3"
+PACKAGE_REVISION = "4"
+EXTERNAL_SCRIPTS = {
+    "kmb-batch": "scripts/run-benchmark.py",
+    "kmb-verify-rules": "scripts/verify-frozen-rules.py",
+}
 INSTALL = Path("opt/openkylin-memory-bench/venv")
 SUPPORT = Path("usr/lib/openkylin-memory-bench")
 UV_VERSION = "0.11.15"
@@ -259,7 +263,9 @@ def inspect_inputs(args):
         chosen[name] = info
     require(set(chosen) == set(closure), "incomplete_wheelhouse")
     require(chosen[PACKAGE]["path"] == wheel, "project_wheel_ambiguous")
-    support = ["pyproject.toml", "uv.lock", "LICENSE", "scripts/run-benchmark.py"]
+    support = ["pyproject.toml", "uv.lock", "LICENSE", *EXTERNAL_SCRIPTS.values()]
+    require(all((root / p).is_file() and not (root / p).is_symlink() for p in support),
+            "support_input_missing_or_symlink")
     inputs = {p: digest(root / p) for p in support}
     inputs["requirements"] = digest(args.requirements)
     return {"root": root, "version": project["version"], "wheels": chosen,
@@ -494,12 +500,16 @@ def build(args, plan, output):
         packaged_lock = venv / "lib/python3.12/uv.lock"
         shutil.copyfile(plan["root"] / "uv.lock", packaged_lock)
         require(digest(packaged_lock) == plan["inputs"]["uv.lock"], "packaged_lock_changed")
-        batch = plan["root"] / "scripts/run-benchmark.py"
-        require(digest(batch) == plan["inputs"]["scripts/run-benchmark.py"], "batch_script_changed")
-        write_file(stage / SUPPORT / "scripts/run-benchmark.py", batch.read_text())
+        for relative in EXTERNAL_SCRIPTS.values():
+            script = plan["root"] / relative
+            require(digest(script) == plan["inputs"][relative], "external_script_changed")
+            write_file(stage / SUPPORT / relative, script.read_text())
+            require(digest(stage / SUPPORT / relative) == plan["inputs"][relative],
+                    "packaged_external_script_changed")
         (stage / SUPPORT / "data").symlink_to(Path("/") / INSTALL / "lib/python3.12/site-packages/kmb/data")
-        for name, tail in (("kmb", "-m kmb.cli"),
-                           ("kmb-batch", "/usr/lib/openkylin-memory-bench/scripts/run-benchmark.py")):
+        for name, tail in (("kmb", "-m kmb.cli"), *(
+                (name, str(Path("/") / SUPPORT / relative))
+                for name, relative in EXTERNAL_SCRIPTS.items())):
             write_file(stage / "usr/bin" / name,
                        f'#!/bin/sh\nexec /{INSTALL}/bin/python -I {tail} "$@"\n', True)
         doc = stage / "usr/share/doc" / PACKAGE
@@ -535,7 +545,10 @@ def build(args, plan, output):
                 == plan["source_payload_sha256"], "payload_source_changed_during_build")
         artifact["stages"].append("metadata_licenses_payload_and_dynamic_dependencies_checked")
         deb = output / f"{PACKAGE}_{plan['version']}-{PACKAGE_REVISION}_arm64.deb"
-        command([host["tools"]["dpkg-deb"], "--build", "--root-owner-group", str(stage), str(deb)], output, records)
+        # Bound compression memory on the 4 GB/2 CPU target guest. The default
+        # multi-threaded xz exceeded the packaging timeout under host swap load.
+        command([host["tools"]["dpkg-deb"], "--threads-max=1", "-Zgzip", "-z6",
+                 "--build", "--root-owner-group", str(stage), str(deb)], output, records)
         require(deb.is_file() and deb.stat().st_size > 0, "deb_artifact_missing")
         artifact.update(status="built_not_installed", deb={"filename": deb.name, "sha256": digest(deb),
                                                            "size": deb.stat().st_size})
