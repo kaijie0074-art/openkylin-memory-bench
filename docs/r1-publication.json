@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "status": "published_verified_with_declared_limits",
+  "checked_at": "2026-10-04T16:49:56.844321+00:00",
+  "release_url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3-r1",
+  "release_tag": "v0.1.0-engineering-v3-r1",
+  "release_id": 403100666,
+  "published_at": "2026-10-04T16:49:09Z",
+  "source_commit": "68db503023150d2e010576b1c950985ff0087b3a",
+  "source_ci": "https://github.com/kaijie0074-art/openkylin-memory-bench/actions/runs/37216001058",
+  "ci_tests_passed": 678,
+  "assets": [
+    {
+      "name": "R1-acceptance-records.tar.gz",
+      "bytes": 653142,
+      "sha256": "05f63723b5c6d532219d6e5be1db92149155a5bb7f21ae4e7dc2c9df2046f40e",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/R1-acceptance-records.tar.gz"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 716,
+      "sha256": "3b28df9a06274f050ca0370cb00e482943b2f4025dbfe6d15f7a35a9ff53a269",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/SHA256SUMS.txt"
+    },
+    {
+      "name": "archive-SHA256SUMS.txt",
+      "bytes": 205,
+      "sha256": "4b97787e2e49d82852f3e3dcd387e1ec6d04df2f0de130bc99358378dd562f62",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/archive-SHA256SUMS.txt"
+    },
+    {
+      "name": "competition-R1-20261004-final-slim.zip",
+      "bytes": 12831439,
+      "sha256": "060168d1847146bd894a9770ce6ad2742fab6d8eb61865f7ef03b0e3a2d2dd9e",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/competition-R1-20261004-final-slim.zip"
+    },
+    {
+      "name": "competition-R1-20261004-final.zip",
+      "bytes": 422587733,
+      "sha256": "3585bddebfb9de43c7c23ed8ca0a86d25f784ac3050347c17bc795d5c1d500bf",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/competition-R1-20261004-final.zip"
+    },
+    {
+      "name": "openkylin-memory-bench-R1-captioned-demo.mp4",
+      "bytes": 4770497,
+      "sha256": "b44b19b40040fc5f1f052e80ad2bf464e0cda6e17a5f8a2e64e588d7c8792f8d",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/openkylin-memory-bench-R1-captioned-demo.mp4"
+    },
+    {
+      "name": "openkylin-memory-bench-R1-introduction.pdf",
+      "bytes": 319958,
+      "sha256": "2b5cc00305cde471e6c47563988ed6b75456c68c3e741bb3deed05870c26d97d",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/openkylin-memory-bench-R1-introduction.pdf"
+    },
+    {
+      "name": "openkylin-memory-bench_0.1.0-4_arm64.deb",
+      "bytes": 98584058,
+      "sha256": "5fe1a7380764393b74ee785d494bcca2674ee7341010d629a594681033809a56",
+      "state": "uploaded",
+      "url": "https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3-r1/openkylin-memory-bench_0.1.0-4_arm64.deb"
+    }
+  ],
+  "server_digests_match": true,
+  "full_zip_download_test": "prefix_1024_and_server_digest_passed_not_full_download",
+  "new_mail_sent": false,
+  "original_release_unchanged": true,
+  "asset_urls_refreshed_after_publication": true,
+  "completed_at": "2026-10-05T00:58:50.595797+08:00",
+  "pages_commit": "e7639d2379de0323e4f16cbefa215f4e8e88d027",
+  "pages_ci_url": "https://github.com/kaijie0074-art/openkylin-memory-bench/actions/runs/37218222237",
+  "pages_ci_status": "success",
+  "video_watch_url": "https://kaijie0074-art.github.io/openkylin-memory-bench/",
+  "anonymous_downloads": [
+    {
+      "name": "R1-acceptance-records.tar.gz",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 653142,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 716,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "archive-SHA256SUMS.txt",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 205,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "competition-R1-20261004-final-slim.zip",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 12831439,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "competition-R1-20261004-final.zip",
+      "status": 206,
+      "mode": "prefix_1024_plus_server_digest",
+      "bytes_received": 1024,
+      "content_type": "application/octet-stream",
+      "content_range": "bytes 0-1023/422587733",
+      "matched": true
+    },
+    {
+      "name": "openkylin-memory-bench-R1-captioned-demo.mp4",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 4770497,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "openkylin-memory-bench-R1-introduction.pdf",
+      "status": 200,
+      "mode": "full_download_sha256",
+      "bytes_received": 319958,
+      "content_type": "application/octet-stream",
+      "content_range": null,
+      "matched": true
+    },
+    {
+      "name": "openkylin-memory-bench_0.1.0-4_arm64.deb",
+      "status": 206,
+      "mode": "prefix_1024_plus_server_digest",
+      "bytes_received": 1024,
+      "content_type": "application/octet-stream",
+      "content_range": "bytes 0-1023/98584058",
+      "matched": true
+    }
+  ],
+  "deb_download_test": "prefix_1024_and_server_digest_passed_not_full_download",
+  "live_page_http": "full_html_mp4_hashes_and_range_passed",
+  "local_video_playback": "uninterrupted_0_to_200_seconds_passed",
+  "local_chapter_navigation": "20_106_172_seconds_passed",
+  "live_video_playback": "not_confirmed_CUA_timeout",
+  "live_browser_attempts": [
+    {
+      "surface": "IAB create tab",
+      "outcome": "30s tool timeout"
+    },
+    {
+      "surface": "CUA getState",
+      "outcome": "30s tool timeout"
+    },
+    {
+      "surface": "Chrome create tab",
+      "outcome": "30s tool timeout"
+    }
+  ],
+  "limits": [
+    "original agent images not publicly redistributed; rebuilding is a new condition",
+    "semantic scoring has no independent human validation",
+    "ARM64 Live validated; x86 and native AgentOS unverified",
+    "new correction email remains unsent"
+  ],
+  "original_core_and_records_unchanged": true,
+  "technical_archive_snapshot": "Final ZIPs and their exported source predate final publication receipts; their bytes and hashes remain unchanged"
+}

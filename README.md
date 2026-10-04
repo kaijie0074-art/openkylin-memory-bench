@@ -2,7 +2,7 @@
 
 面向 openKylin 的智能体跨会话记忆评测工具。让 OpenClaw 与 Hermes 经历 3–5 次新会话，收集真实对话、可见记忆、工具提案与最终文件；冻结证据后，以规则、模型裁判、混合三种方法离线评分，并生成可追溯的六维 HTML 报告。
 
-**源码、原版发行附件和视频已公开。** [仓库](https://github.com/kaijie0074-art/openkylin-memory-bench) · [视频](https://kaijie0074-art.github.io/openkylin-memory-bench/) · [原版发行](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)。2026-10-04 的 R1 修订已完成技术验证，修复离线核验入口、复现指引和材料状态；最终档案验收回执另附，正式实验仍为工程 v3。
+**R1 源码、修订材料和视频已公开。** [仓库](https://github.com/kaijie0074-art/openkylin-memory-bench) · [视频](https://kaijie0074-art.github.io/openkylin-memory-bench/) · [R1 发行](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3-r1) · [原版发行（历史）](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)。2026-10-05 已发布 R1：最终 ZIP 已在 Mac 和断网 openKylin 解包验收；公开 CI 通过 678 项检查。发行另附包外验收回执，正式实验仍为工程 v3。原镜像未公开分发，按 Dockerfile 重建属于新条件。更正邮件尚未发送。
 
 ## 已验证的范围
 

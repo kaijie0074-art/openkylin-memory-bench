@@ -28,7 +28,7 @@ ARM64 .deb `0.1.0-3` 断网安装、普通用户模拟批处理、卸载重装�
 
 ## 原始凭证如何复核
 
-完整技术档案提供源码、题库、私有判据、成功/失败样例、安装包、连续原片与 `08_完整实验凭证.tar.gz`。原版发行附件已公开：[完整材料与安装包](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)。[视频观看页](https://kaijie0074-art.github.io/openkylin-memory-bench/)无需登录。R1修订材料正在验收，不能把原版链接标为已发布的修订版。
+完整技术档案提供源码、题库、私有判据、成功/失败样例、安装包、连续原片与 `08_完整实验凭证.tar.gz`。原版发行附件已公开：[完整材料与安装包](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)。[视频观看页](https://kaijie0074-art.github.io/openkylin-memory-bench/)无需登录。[R1 修订材料](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3-r1) 已于 2026-10-05 公开。原版链接保留为历史入口。
 
 在源码根目录解压凭证后恢复 `reports/`：
 
@@ -41,3 +41,11 @@ ARM64 .deb `0.1.0-3` 断网安装、普通用户模拟批处理、卸载重装�
 按 [评审复现说明](../competition/评审复现说明.md)核对哈希及离线重评分。保留整个 HTML report 目录，文件引用才能打开；副本不重复计数。重新执行真实实验需要显式配置模型与原镜像，并使用新的输出路径。历史 v2 通道故障不混入 v3 正式成绩。
 
 短程 3–5 次会话只能证明这些文件任务的实际行为，不能直接外推数月记忆保持。隐藏记忆、完整动作执行及语义判据仍有可观测性与校准限制。
+
+## R1 补充核验（2026-10-05）
+
+独立离线工具复算原 108 份 A，稳定字段零差异；B/C 不调用模型，仅结构绑定。新版 `.deb` `0.1.0-4` 在新的 openKylin 3.0 ARM64 客体通过断网安装、模拟编排、核验与正式报告再生成。最终完整/精简档案在 Mac 与断网客体从源码目录外验收。公开技术提交 [CI](https://github.com/kaijie0074-art/openkylin-memory-bench/actions/runs/37216001058) 通过 678 项。
+
+新的 4 次真实开发运行、12 条评分单独保存：3 次任务通过，1 次 Hermes 预算耗尽并失败。原正式 108/324 不变。视频为 200 秒的历史真实素材重剪，本地连续播放与解码通过，线上浏览器实际播放因工具超时未确认；线上文件哈希与分段下载通过。原智能体镜像未公开分发，Dockerfile 重建为新条件。更正邮件仅为未发送草稿。
+
+最终档案内源码为发布前技术快照；当前仓库另补实际发布链接和回执，不修改快照的哈希或冻结评测核心。
