@@ -2,7 +2,9 @@
 
 面向 openKylin 的智能体跨会话记忆评测工具。让 OpenClaw 与 Hermes 经历 3–5 次新会话，收集真实对话、可见记忆、工具提案与最终文件；冻结证据后，以规则、模型裁判、混合三种方法离线评分，并生成可追溯的六维 HTML 报告。
 
-**公开源码包含代码、60 道原创任务、锁定依赖、测试、ARM64 安装包的复现说明与实际结果。** [发行材料](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)提供作品介绍 PDF、精简评审包、完整技术档案、ARM64 安装包和讲解字幕视频。报名、视频平台上传与投稿仍需参赛人自行完成，步骤见 [人工投稿说明](SUBMISSION.md)。
+[观看演示视频（3 分 27 秒）](https://kaijie0074-art.github.io/openkylin-memory-bench/) · [下载作品方案](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/download/v0.1.0-engineering-v3/openkylin-memory-bench-introduction.pdf)
+
+**公开源码包含代码、60 道原创任务、锁定依赖、测试、ARM64 安装包的复现说明与实际结果。** [发行材料](https://github.com/kaijie0074-art/openkylin-memory-bench/releases/tag/v0.1.0-engineering-v3)提供作品介绍 PDF、精简评审包、完整技术档案、ARM64 安装包和讲解字幕视频。视频观看链接已准备；报名与投稿仍由参赛人自行完成，步骤见 [人工投稿说明](SUBMISSION.md)。
 
 ## 已验证的范围
 
